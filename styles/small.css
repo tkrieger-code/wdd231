@@ -8,7 +8,7 @@
     --card-bg: #eee;  /* Fundo dos blocos/cards */
     --text-color: #333;
     --bg-color: #ffffff;
-    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body{
@@ -82,8 +82,10 @@ header span{
     border-bottom: solid 1px #ddd;
 }
 
-.navigation a.current{
-    background-color: #eee;
+.navigation a.current {
+    background-color: rgba(228, 102, 175, 0.14); /* Seu fundo atual */
+    color: #111111; /* Texto quase preto para dar contraste máximo */
+    font-weight: bold;
 }
 
 .navigation a:hover{
@@ -147,8 +149,8 @@ section{
 }
 
 section h2{
-    background-color: var(--primary-color);
-    color: white;
+    background-color: #b32d7a;
+    color: #ffffff;
     margin: 0;
     padding: 0.8rem 10px;
     font-size: 1.2rem;
@@ -189,9 +191,9 @@ section p{
 
 /* botões de filtro*/
 .btn-filter{
-    background: none;
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
+    background: #ffffff;
+    border: 1px solid #b32d7a;
+    color: #b32d7a;
     padding: 0.6rem 1rem;
     border-radius: 4px;
     font-family: var(--font-family);
@@ -200,6 +202,12 @@ section p{
     flex: 1;
     max-width: 100px;
     transition: 0.3s;
+}
+
+/* O botão ativo (.active) pode continuar com o fundo preenchido */
+.btn-filter.active {
+    background-color: #b32d7a;
+    color: #ffffff;
 }
 
 .btn-filter:hover, .btn-filter.active{
