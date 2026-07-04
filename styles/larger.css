@@ -1,0 +1,68 @@
+@media only screen and (min-width: 38rem){
+    header, main, nav, footer{
+        max-width: 900px;
+        margin: auto;
+    }
+
+    header{
+        grid-template-columns: 24px auto;
+    }
+
+    .hamburguer{
+        display: none;
+    }
+
+    .navigation{
+        display: block;
+        border-bottom: solid 1px #eee;
+    }
+
+    .navigation a.current{
+    background-color: #e466af24;
+    }
+
+    .navigation ul{
+        display: flex;
+    }
+
+    .navigation a{
+        border: none;
+    }
+
+    /* Coloca o About Me e a Foto lado a lado */
+    .profile-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr; /* About me ocupa 2 partes e a foto 1 parte */
+        gap: 20px;
+        align-items: start;
+        padding: 20px 0;
+    }
+
+    /* Remove a margem inferior dupla que vinha do mobile */
+    section {
+        margin-bottom: 0; 
+    }
+
+    /* Organiza os botões de filtro para não esticarem demais no desktop */
+    .courses-section > div:first-of-type {
+        justify-content: flex-start; /* Alinha os botões à esquerda */
+        gap: 10px;
+    }
+
+    .btn-filter {
+        max-width: 150px; /* Permite que o botão seja um pouco mais largo no PC */
+    }
+
+    /* Transforma a lista de cursos em 3 colunas lado a lado */
+    .courses-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas de tamanhos iguais */
+        gap: 15px;
+        margin: 20px 0;
+    }
+
+    /* Melhora o espaçamento interno dos cards no desktop */
+    .course-card {
+        padding: 2rem 1rem;
+    }
+}

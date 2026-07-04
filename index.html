@@ -3,10 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD231 - Tatiane</title>
+    <title>WDD231 - Course Home Page</title>
+    <meta name="description" content="WDD 231 - Web Frontend Development, developed by Tatiane Krieger. This page presents a learning about web frontend development.">
+    <meta name="author" content="Tatiane Krieger">
     <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css" media="min-width: 38rem">
+    <script src="scripts/index.js" defer></script>
 </head>
 <body>
-    WDD 231- Tatiane Krieger
+    <header>
+        <img src="images/box2-heart.svg" alt="Site Logo" width="44" height="44">
+        <span>Tatiane Krieger</span>
+        <button id="ham-btn" class="hamburguer" aria-label="Abrir menu de navegação"></button>
+    </header>
+
+    <nav id="nav-bar" class="navigation">
+        <ul>
+            <li><a href="#" class="current">Home</a></li>
+            <li><a href="#">Chamber Project</a></li>
+            <li><a href="#">Final Project</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Home</h1>
+
+        <div class="profile-container">
+            <section class="about-me">
+                <h2>About Me</h2>
+                <p>My name is Tatiane Krieger. I live in Brasil, and I am a Web Development student. Somethings that I like to do are traveling, cook for my family and friends, and make handmade projects.</p>
+            </section> 
+
+            <section class="student-photo">
+                <h2>Student Photo</h2>
+                <img src="images/profile.jpg" alt="Me and my husband" width="200" height="200" fetchpriority="high">
+            </section>
+        </div>
+
+        <section class="courses-section">
+            <h2>Web Certificate Courses</h2>
+
+            <div>
+                <button id="filter-all" class="btn-filter active">All</button>
+                <button id="filter-cse" class="btn-filter">CSE</button>
+                <button id="filter-wdd" class="btn-filter">WDD</button>
+            </div>
+
+            <div class="courses-container">
+                
+            </div>
+
+            <p class="total-credits">The total credits for courses listed above is <span id="credits-count">10</span></p>
+
+        </section>
+
+    </main>
+    <footer>
+        <div class="social">
+            <a href="https://www.facebook.com/andry.taty/?locale=pt_BR" target="_blank"><img src="images/facebook.svg" alt="facebook" width="16" height="16"></a>
+            <a href="https://github.com/tkrieger-code" target="_blank"><img src="images/github.svg" alt="github" width="16" height="16"></a>
+            <a href="https://www.instagram.com/andrytaty/" target="_blank"><img src="images/instagram.svg" alt="instagram" width="16" height="16"></a>
+            <a href="https://www.linkedin.com/in/tatiane-krieger-b75934373/" target="_blank"><img src="images/linkedin.svg" alt="linkedin" width="16" height="16"></a>
+
+        </div>
+        <p>&copy; <span id="currentyear"></span> | Tatiane Krieger | Rio grande do Sul</p>
+        <p id="lastModified"></p>
+    </footer>
+
 </body>
 </html>
