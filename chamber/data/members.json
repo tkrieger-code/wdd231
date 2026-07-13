@@ -4,7 +4,7 @@
     "address": "Av. Guilherme Schell, 4500 - Centro",
     "phone": "(51) 3472-1000",
     "website": "https://www.metalurgicacanoas.com.br",
-    "image": "metalurgica.png",
+    "image": "metalurgica.webp",
     "membershipLevel": 3,
     "tagline": "Moldando o futuro da indústria gaúcha."
   },
@@ -13,7 +13,7 @@
     "address": "Rua Tiradentes, 120 - Rio Branco",
     "phone": "(51) 99123-4567",
     "website": "https://www.doceparada.com.br",
-    "image": "confeitaria.png",
+    "image": "confeitaria.webp",
     "membershipLevel": 2,
     "tagline": "Os melhores doces e tortas artesanais da cidade."
   },
@@ -31,7 +31,7 @@
     "address": "Rua Venâncio Aires, 850 - Niterói",
     "phone": "(51) 3476-9911",
     "website": "https://www.mercadodobairro.com.br",
-    "image": "mercado.png",
+    "image": "mercado.webp",
     "membershipLevel": 1,
     "tagline": "Preço baixo e qualidade perto de você."
   },
@@ -40,7 +40,7 @@
     "address": "Rua XV de Novembro, 340 - Centro",
     "phone": "(51) 3428-2233",
     "website": "https://www.livrariaprogresso.com.br",
-    "image": "papelaria.png",
+    "image": "papelaria.webp",
     "membershipLevel": 1,
     "tagline": "Tudo para a sua rotina escolar e de escritório."
   },
@@ -49,7 +49,7 @@
     "address": "Av. Farroupilha, 6303 - Igara",
     "phone": "(51) 98765-4321",
     "website": "https://tkrieger-code.github.io/wdd231",
-    "image": "techcode.png",
+    "image": "techcode.webp",
     "membershipLevel": 3,
     "tagline": "Desenvolvimento de software focado em inovação."
   },
@@ -58,7 +58,7 @@
     "address": "Rua Fioravante Milanez, 150 - Centro",
     "phone": "(51) 3052-0099",
     "website": "https://www.clinicavidaesaude.com.br",
-    "image": "clinica.png",
+    "image": "clinica.webp",
     "membershipLevel": 2,
     "tagline": "Cuidando com carinho do seu bem-estar."
   }

@@ -166,6 +166,7 @@ footer{
     grid-template-columns: 1fr; /* No mobile, fica tudo em uma coluna */
     gap: 1.5rem;
     padding: 1rem;
+    min-height: 50vh;
 }
 
 /* Base do cartão corporativo */
