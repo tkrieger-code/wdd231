@@ -2,26 +2,19 @@
    WDD231 - CHAMBER OF COMMERCE: LARGER SCREEN STYLES (min-width: 38rem)
    ========================================================================== */
 
-/* --- MENU DE NAVEGAÇÃO DESKTOP --- */
+/* --- HEADER & NAVEGAÇÃO DESKTOP --- */
 .hamburguer {
-    display: none; /* Esconde o botão de hambúrguer no computador */
-}
-
-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
+    display: none;
 }
 
 .navigation {
-    display: block; /* Garante que o menu fique sempre visível */
-    flex-grow: 0;
+    display: block;
     max-width: none;
+    flex-grow: 0;
 }
 
 .navigation ul {
-    display: flex; /* Alinha os itens do menu lado a lado */
+    display: flex;
     gap: 10px;
     margin: 0;
     padding: 0;
@@ -29,9 +22,10 @@ header{
 
 .navigation a {
     color: white;
-    border-bottom: none; /* Remove as bordas de linha do mobile */
+    border-bottom: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 .navigation a.current {
@@ -39,15 +33,13 @@ header{
     color: #ffffff;
 }
 
-/* --- EXIBIÇÃO EM GRID DO DIRETÓRIO --- */
+/* --- EXIBIÇÃO EM GRID --- */
 .directory-container.grid {
-    /* Força uma grade de 3 colunas perfeitas no desktop conforme o wireframe */
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr);
     max-width: 1200px;
-    margin: 0 auto; /* Centraliza o conteúdo na tela */
+    margin: 0 auto;
 }
 
-/* Ajuste sutil dos cartões no modo Grid para desktop */
 .directory-container.grid .business-card {
     display: flex;
     flex-direction: column;
@@ -55,46 +47,33 @@ header{
     align-items: center;
 }
 
-.directory-container.grid .business-card img {
-    margin: 1rem 0;
-    max-width: 100%;
-    height: auto;
-}
-
-/* --- EXIBIÇÃO EM LISTA DO DIRETÓRIO --- */
+/* --- EXIBIÇÃO EM LISTA --- */
 .directory-container.list {
     max-width: 1000px;
     margin: 0 auto;
 }
 
 .directory-container.list .business-card {
-    flex-direction: row; /* Faz a linha de dados horizontal */
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 0.75rem 2rem;
 }
 
-/* Mantém um padrão zebrado sutil para facilitar a leitura na lista longa */
 .directory-container.list .business-card:nth-child(even) {
     background-color: #f0f0f0;
 }
 
-/* --- RODAPÉ INSTITUCIONAL (3 COLUNAS) --- */
+/* --- RODAPÉ DESKTOP --- */
 footer {
-    display: grid !important; /* Sobrescreve o flex se necessário */
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais estruturadas */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
     gap: 20px;
-    padding: 30px 50px; /* Ajuste para equilibrar as bordas de respiro */
+    padding: 30px 50px;
     text-align: left;
 }
 
-/* Remove a margem inferior do mobile que não precisa mais aqui */
-.footer-info {
-    margin-bottom: 0;
-}
-
-/* Alinha o bloco final do rodapé à direita no desktop */
 footer > div:last-child {
     text-align: right;
 }

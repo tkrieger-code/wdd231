@@ -1,12 +1,17 @@
+/* ==========================================================================
+   WDD231 - CHAMBER OF COMMERCE: SMALL SCREEN STYLES (Mobile First)
+   ========================================================================== */
+
 /* --- CONFIGURAÇÕES GERAIS --- */
 :root {
-    --primary-color: #034d18f4;  /* Cor escura dos cabeçalhos do wireframe */
+    --primary-color: #034d18f4;
+    --card-bg: #f9f9f9; /* Corrigido o vermelho para o cinza suave do wireframe */
     --text-color: #333;
     --bg-color: #ffffff;
     --font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body{
+body {
     font-family: var(--font-family);
     margin: 0;
     padding: 0;
@@ -15,7 +20,7 @@ body{
     line-height: 1.6;
 }
 
-header{
+header {
     background-color: var(--primary-color);
     color: white;
     display: flex;
@@ -24,16 +29,12 @@ header{
     padding: 1rem;
 }
 
-header img{
-    margin-left: 20px;
-}
-
-header span{
+header span {
     font-size: 1.6rem;
     font-weight: bold;
 }
 
-.hamburguer{
+.hamburguer {
     background-color: transparent;
     border: none;
     color: white;
@@ -44,36 +45,34 @@ header span{
     height: 44px;
 }
 
-.hamburguer::before{
+.hamburguer::before {
     content: "\2630";
     font-size: 2rem;
-
 }
 
-.hamburguer.show::before{
+.hamburguer.show::before {
     content: "\00D7";
-
 }
 
-/* navigation*/
-.navigation{
+/* --- NAVEGAÇÃO MOBILE --- */
+.navigation {
     display: none;
 }
 
-.navigation.show{
+.navigation.show {
     display: block;
 }
 
-.navigation ul{
+.navigation ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-.navigation a{
+.navigation a {
     display: block;
     padding: .8rem 10px;
-    color: var(--card-bg);
+    color: var(--primary-color);
     text-decoration: none;
     border-bottom: solid 1px #ddd;
 }
@@ -84,57 +83,13 @@ header span{
     font-weight: bold;
 }
 
-.navigation a:hover{
+.navigation a:hover {
     background-color: #ddd;
 }
 
-h1{
-    margin-left: 50px;
+h1 {
+    margin-left: 10px;
     color: var(--text-color);
-}
-
-/* footer*/
-footer{
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    background-color: #eee;
-    text-align: center;
-    padding: 2rem 1rem;
-    gap: 1.5rem;
-}
-
-.footer-info p{
-    margin: 0.3rem 0;
-}
-
-.social{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 12px;
-    margin: 0.5rem 0;
-}
-
-.social a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 44px;
-    height: 44px;
-    border: var(--primary-color) solid 1px;
-    border-radius: 4px;
-    background-color: transparent;
-}
-
-.social img{
-    width: 24px;
-    height: 24px;
-    display: block;
-}
-
-.social a:hover{
-    background-color: white;
 }
 
 /* --- CONTROLES GRID/LIST --- */
@@ -163,15 +118,15 @@ footer{
 /* --- CONTAINER DO DIRETÓRIO --- */
 .directory-container {
     display: grid;
-    grid-template-columns: 1fr; /* No mobile, fica tudo em uma coluna */
+    grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 1rem;
-    min-height: 50vh;
+    min-height: 50vh; /* Evita saltos de layout (CLS) */
 }
 
 /* Base do cartão corporativo */
 .business-card {
-    background-color: #f9f9f9; /* Um cinza bem clarinho igual ao plano do wireframe */
+    background-color: var(--card-bg);
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 1rem;
@@ -180,34 +135,37 @@ footer{
 }
 
 .business-card h2 {
-    background-color: #eee; /* Cor de fundo da faixa do título */
-    margin: -1rem -1rem 1rem -1rem; /* Alinha o título perfeitamente nas bordas internas */
+    background-color: #eee;
+    margin: -1rem -1rem 1rem -1rem;
     padding: 0.5rem;
     font-size: 1.2rem;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
 
-/* Organização do Footer Institucional */
-.footer-info {
-    margin-bottom: 1rem;
+.business-card img {
+    max-width: 150px;
+    width: 100%;
+    height: auto;
+    margin: 1rem auto;
+    display: block;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    object-fit: contain;
 }
 
-/* estilo .grid */
-.directory-container.grid{
-    display: grid;
+/* --- CLASSES ATIVADAS VIA JS (GRID VS LIST) --- */
+.directory-container.grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
 }
 
-/* estilo .list */
-.directory-container.list{
+.directory-container.list {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.directory-container.list .business-card{
+.directory-container.list .business-card {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -215,15 +173,51 @@ footer{
     padding: 0.5rem 1rem;
 }
 
-.directory-container.list .business-card img, .directory-container.list .business-card .tagline{
+.directory-container.list .business-card img, 
+.directory-container.list .business-card .tagline {
     display: none;
 }
 
-/* Ajuste para as imagens dos cartões corporativos */
-.business-card img {
-    max-width: 150px;       /* Não deixa passar do tamanho correto do wireframe */
-    width: 100%;            /* Permite encolher em telas muito pequenas se necessário */
-    height: auto;           /* Mantém a proporção perfeita do logotipo sem distorcer */
-    margin: 1rem auto;      /* Centraliza horizontalmente e dá espaçamento */
+/* --- RODAPÉ INSTITUCIONAL MOBILE --- */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #eee;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+}
+
+.footer-info p {
+    margin: 0.3rem 0;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 0.5rem 0;
+}
+
+.social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border: var(--primary-color) solid 1px;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+.social img {
+    width: 24px;
+    height: 24px;
     display: block;
+}
+
+.social a:hover {
+    background-color: white;
 }
