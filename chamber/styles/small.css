@@ -1,0 +1,182 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+:root {
+    --primary-color: #034d18f4;  /* Cor escura dos cabeçalhos do wireframe */
+    --card-bg: #b70704f4;  /* Fundo dos blocos/cards */
+    --text-color: #333;
+    --bg-color: #ffffff;
+    --font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header{
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+header span{
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.hamburguer{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    position: relative;
+    width: 44px;
+    height: 44px;
+}
+
+.hamburguer::before{
+    content: "\2630";
+    font-size: 2rem;
+
+}
+
+.hamburguer.show::before{
+    content: "\00D7";
+
+}
+
+/* navigation*/
+.navigation{
+    display: none;
+}
+
+.navigation.show{
+    display: block;
+}
+
+.navigation ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation a{
+    display: block;
+    padding: .8rem 10px;
+    color: var(--card-bg);
+    text-decoration: none;
+    border-bottom: solid 1px #ddd;
+}
+
+.navigation a.current {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.navigation a:hover{
+    background-color: #ddd;
+}
+
+h1{
+    margin-left: 10px;
+    color: var(--text-color);
+}
+
+/* footer*/
+footer{
+    display: flex;
+    grid-template-columns: repeat(1fr);
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eee;
+    text-align: left;
+    padding: 50px 5px 5px 50px;
+}
+
+.social{
+    display: flex;
+    justify-content: center;
+    column-gap: 8px;
+}
+
+.social a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border: var(--primary-color) solid 1px;
+    border-radius: 4px;
+}
+
+.social img{
+    width: 22px;
+    height: 22px;
+}
+
+.social a:hover{
+    background-color: white;
+}
+
+/* --- CONTROLES GRID/LIST --- */
+.view-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 1rem 0;
+}
+
+.view-toggle button {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.view-toggle button.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* --- CONTAINER DO DIRETÓRIO --- */
+.directory-container {
+    display: grid;
+    grid-template-columns: 1fr; /* No mobile, fica tudo em uma coluna */
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+/* Base do cartão corporativo */
+.business-card {
+    background-color: #f9f9f9; /* Um cinza bem clarinho igual ao plano do wireframe */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.business-card h2 {
+    background-color: #eee; /* Cor de fundo da faixa do título */
+    margin: -1rem -1rem 1rem -1rem; /* Alinha o título perfeitamente nas bordas internas */
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+/* Organização do Footer Institucional */
+.footer-info {
+    margin-bottom: 1rem;
+}

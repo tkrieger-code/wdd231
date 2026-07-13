@@ -1,0 +1,105 @@
+/* Configurações Gerais e Cores */
+:root {
+    --primary-color: #1e3a8a; /* Azul escuro para o cabeçalho */
+    --accent-color: #f1f5f9;  /* Fundo claro para a página */
+    --card-bg: #ffffff;       /* Fundo branco para os cartões */
+    --text-color: #334155;     /* Cor do texto principal */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+/* Área Principal - O Container dos Cards */
+main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza a área de conteúdo no computador */
+}
+
+/* O Segredo da Estrutura: CSS Grid */
+#cards {
+    display: grid;
+    /* Cria colunas automáticas de no mínimo 280px. Se couber mais, ele alinha sozinho! */
+    grid-template-columns: 1fr;
+    gap: 1.5rem; /* Espaço entre os cartões */
+    padding: 1rem;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    #cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+#cards p{
+    margin: 0.3rem 0;
+    font-size: 1rem;
+    color: #4b5563;
+}
+
+/* Estilização dos Cartões Dinâmicos (Criados pelo JS) */
+#cards section {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efeito visual bonito ao passar o mouse no cartão */
+#cards section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+#cards h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+/* Ajuste das Imagens para não estourarem o cartão */
+#cards img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Rodapé */
+footer {
+    background-color: #334155;
+    color: #f8fafc;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-top: auto; /* Garante que o rodapé fique sempre embaixo */
+}

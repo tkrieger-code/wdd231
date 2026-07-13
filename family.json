@@ -1,0 +1,38 @@
+{
+    "family-name": "Costa",
+    "move-in-date": "1992-01-20",
+    "number-of-people": 6,
+    "visited-by-bishop": true,
+    "family-members": [
+        {
+            "name": "Paulo Costa",
+            "gender": "Male",
+            "birthdate": "1964-11-11"
+        },
+        {
+            "name": "Sueli dos Santos",
+            "gender": "Female",
+            "birthdate": "1969-04-17"
+        },
+        {
+            "name": "Marcos Costa",
+            "gender": "Male",
+            "birthdate": "1988-07-15"
+        },
+        {
+            "name": "Tatiane Costa",
+            "gender": "Female",
+            "birthdate": "1990-11-13"
+        },
+        {
+            "name": "Tamara Costa",
+            "gender": "Female",
+            "birthdate": "1994-01-15"
+        },
+        {
+            "name": "Dalton Costa",
+            "gender": "Male",
+            "birthdate": "1996-12-21"
+        }
+    ]
+}
