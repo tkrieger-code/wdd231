@@ -10,7 +10,7 @@
     <!-- metadados facebook -->
     <meta property="og:title" content="Canoas Chamber of Commerce - Directory">
     <meta property="og:description" content="Explore the business directory of the Canoas Chamber of Commerce. Connect with local industries, shops, and services in Rio Grande do Sul.">
-    <meta property="og:image" content="https://tkrieger-code.github.io/wdd231/chamber/images/og-image.jpg">
+    <meta property="og:image" content="https://tkrieger-code.github.io/wdd231/chamber/images/og-image.svg">
     <meta property="og:url" content="https://tkrieger-code.github.io/wdd231/chamber/directory.html">
     <meta property="og:type" content="website">
 
@@ -21,7 +21,8 @@
 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 38rem)">
+    <link rel="stylesheet" href="styles/larger.css" media="print" onload="this.media='(min-width: 38rem)'">
+    <noscript><link rel="stylesheet" href="styles/larger.css" media="(min-width: 38rem)"></noscript>
     <script src="scripts/chamber.js" defer></script>
 
     <link rel="icon" href="images/favicon.ico">
@@ -29,19 +30,20 @@
 </head>
 <body>
     <header>
-        <img src="images/box2-heart.svg" alt="Site Logo" width="44" height="44">
+        <img src="images/logo-chamber.png" alt="Site Logo" width="100" height="100">
         <span>Canoas Chamber of Commerce</span>
         <button id="ham-btn" class="hamburguer" aria-label="Abrir menu de navegação"></button>
+        <nav id="nav-bar" class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html" class="current">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav id="nav-bar" class="navigation">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#" class="current">Directory</a></li>
-            <li><a href="#">Join</a></li>
-            <li><a href="#">Discover</a></li>
-        </ul>
-    </nav>
+
 
     <main>
         <h1>Directory</h1>
@@ -71,10 +73,10 @@
             <a href="https://www.linkedin.com/in/tatiane-krieger-b75934373/" target="_blank" aria-label="LinkedIn"><img src="images/linkedin.svg" alt="linkedin" width="16" height="16"></a>
         </div>
 
-        <div>
+        <div class="footer-meta">
             <p>WDD231 Class Project</p>
             <p>Tatiane Krieger</p>
-            <p>&copy; <span id="currentyear"></span> Canoas Chamber of Commerce</p>
+            <p>&copy; <span id="currentyear"></span>Canoas Chamber of Commerce</p>
             <p id="lastModified"></p>  
         </div>
         

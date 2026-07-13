@@ -1,7 +1,6 @@
 /* --- CONFIGURAÇÕES GERAIS --- */
 :root {
     --primary-color: #034d18f4;  /* Cor escura dos cabeçalhos do wireframe */
-    --card-bg: #b70704f4;  /* Fundo dos blocos/cards */
     --text-color: #333;
     --bg-color: #ffffff;
     --font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -23,6 +22,10 @@ header{
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
+}
+
+header img{
+    margin-left: 20px;
 }
 
 header span{
@@ -86,25 +89,31 @@ header span{
 }
 
 h1{
-    margin-left: 10px;
+    margin-left: 50px;
     color: var(--text-color);
 }
 
 /* footer*/
 footer{
     display: flex;
-    grid-template-columns: repeat(1fr);
-    justify-content: space-between;
+    flex-direction: column; 
     align-items: center;
     background-color: #eee;
-    text-align: left;
-    padding: 50px 5px 5px 50px;
+    text-align: center;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+}
+
+.footer-info p{
+    margin: 0.3rem 0;
 }
 
 .social{
     display: flex;
     justify-content: center;
-    column-gap: 8px;
+    align-items: center;
+    column-gap: 12px;
+    margin: 0.5rem 0;
 }
 
 .social a{
@@ -115,11 +124,13 @@ footer{
     height: 44px;
     border: var(--primary-color) solid 1px;
     border-radius: 4px;
+    background-color: transparent;
 }
 
 .social img{
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
+    display: block;
 }
 
 .social a:hover{
@@ -179,4 +190,39 @@ footer{
 /* Organização do Footer Institucional */
 .footer-info {
     margin-bottom: 1rem;
+}
+
+/* estilo .grid */
+.directory-container.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* estilo .list */
+.directory-container.list{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.directory-container.list .business-card{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0.5rem 1rem;
+}
+
+.directory-container.list .business-card img, .directory-container.list .business-card .tagline{
+    display: none;
+}
+
+/* Ajuste para as imagens dos cartões corporativos */
+.business-card img {
+    max-width: 150px;       /* Não deixa passar do tamanho correto do wireframe */
+    width: 100%;            /* Permite encolher em telas muito pequenas se necessário */
+    height: auto;           /* Mantém a proporção perfeita do logotipo sem distorcer */
+    margin: 1rem auto;      /* Centraliza horizontalmente e dá espaçamento */
+    display: block;
 }
