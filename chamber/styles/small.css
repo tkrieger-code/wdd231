@@ -149,8 +149,6 @@ h1 {
     height: auto;
     margin: 1rem auto;
     display: block;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
     object-fit: contain;
 }
 
