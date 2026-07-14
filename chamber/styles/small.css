@@ -1,35 +1,23 @@
-/* ==========================================================================
-   WDD231 - CHAMBER OF COMMERCE: SMALL SCREEN STYLES (Mobile First)
-   ========================================================================== */
-
-:root {
-    --primary-color: #034d18f4;
-    --card-bg: #f9f9f9;
-    --text-color: #333;
-    --bg-color: #ffffff;
-    --font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-    font-family: var(--font-family);
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-}
-
+/* --- HEADER MOBILE CORRIGIDO --- */
 header {
     background-color: var(--primary-color);
     color: white;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* Logo na esquerda, Título no meio, Botão na direita */
     align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
+    gap: 10px;
+    padding: 0.8rem 1rem;
+    position: relative;
+}
+
+header img {
+    width: 50px;
+    height: auto;
 }
 
 header span {
-    font-size: 1.6rem;
+    font-size: 1.2rem; /* Tamanho reduzido para não quebrar em tantas linhas no celular */
+    line-height: 1.2;
     font-weight: bold;
 }
 
@@ -39,22 +27,20 @@ header span {
     color: white;
     font-size: 2rem;
     cursor: pointer;
-    position: relative;
     width: 44px;
     height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.hamburguer::before {
-    content: "\2630";
-    font-size: 2rem;
-}
-
-.hamburguer.show::before {
-    content: "\00D7";
-}
-
+/* --- NAVEGAÇÃO MOBILE EM CORTINA --- */
 .navigation {
     display: none;
+    grid-column: 1 / -1; /* Força o menu a ocupar a largura inteira abaixo do header */
+    background-color: #ffffff; /* Fundo branco para destacar os links no mobile */
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navigation.show {
@@ -65,150 +51,30 @@ header span {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    width: 100%;
+}
+
+.navigation li {
+    width: 100%;
 }
 
 .navigation a {
     display: block;
-    padding: .8rem 10px;
-    color: var(--primary-color);
+    padding: 1rem;
+    color: var(--primary-color); /* Texto verde sobre o fundo branco do menu */
     text-decoration: none;
-    border-bottom: solid 1px #ddd;
+    border-bottom: solid 1px #eee;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 
+/* Estado ativo e hover no mobile */
 .navigation a.current {
     background-color: var(--primary-color);
     color: #ffffff;
-    font-weight: bold;
 }
 
 .navigation a:hover {
-    background-color: #ddd;
-}
-
-h1 {
-    margin-left: 10px;
-    color: var(--text-color);
-}
-
-.view-toggle {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 1rem 0;
-}
-
-.view-toggle button {
-    padding: 0.5rem 1.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    background-color: #eee;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.view-toggle button.active {
-    background-color: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
-}
-
-.directory-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 1rem;
-    min-height: 50vh;
-}
-
-.business-card {
-    background-color: var(--card-bg);
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.business-card h2 {
-    background-color: #eee;
-    margin: -1rem -1rem 1rem -1rem;
-    padding: 0.5rem;
-    font-size: 1.2rem;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-}
-
-.business-card img {
-    max-width: 150px;
-    width: 100%;
-    height: auto;
-    margin: 1rem auto;
-    display: block;
-    object-fit: contain;
-}
-
-.directory-container.grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.directory-container.list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.directory-container.list .business-card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    padding: 0.5rem 1rem;
-}
-
-.directory-container.list .business-card img, 
-.directory-container.list .business-card .tagline {
-    display: none;
-}
-
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: #eee;
-    padding: 2rem 1rem;
-    gap: 1.5rem;
-}
-
-.footer-info p {
-    margin: 0.3rem 0;
-}
-
-.social {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    margin: 0.5rem 0;
-}
-
-.social a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 44px;
-    height: 44px;
-    border: var(--primary-color) solid 1px;
-    border-radius: 4px;
-    background-color: transparent;
-}
-
-.social img {
-    width: 24px;
-    height: 24px;
-    display: block;
-}
-
-.social a:hover {
-    background-color: white;
+    background-color: #f5f5f5;
 }
