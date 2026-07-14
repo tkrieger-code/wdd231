@@ -32,7 +32,6 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0.8rem 1.2rem;
-    width: 100%;
 }
 
 .logo-title-container {
@@ -111,9 +110,8 @@ header span {
     color: #ffffff;
 }
 
-.navigation a:hover {
+.navigation a:not(.current):hover {
     background-color: #f5f5f5;
-    color: var(--primary-color);
 }
 
 /* --- TÍTULO PRINCIPAL --- */
