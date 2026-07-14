@@ -10,6 +10,13 @@
         font-size: 1.6rem; /* Título maior no desktop */
     }
 
+    header img{
+        width: 80px;
+        height: auto;
+        border-radius: 6px;
+        padding: 4px;
+    }
+
     .hamburguer {
         display: none; /* Esconde o botão de menu */
     }
@@ -24,6 +31,7 @@
 
     .navigation ul {
         display: flex;
+        justify-content: flex-end;
         gap: 10px;
     }
 
@@ -38,4 +46,31 @@
         background-color: rgba(0, 0, 0, 0.4); /* Fundo contrastante para a aba ativa */
         color: #ffffff;
     }
+}
+
+.directory-container.grid{
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.directory-container.list{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.directory-container.list .business-card{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 2rem;
+}
+
+footer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 20px;
+    padding: 30px 50px;
+    text-align: left;
 }
