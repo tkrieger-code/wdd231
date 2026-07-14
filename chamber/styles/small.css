@@ -1,31 +1,67 @@
-/* --- HEADER MOBILE CORRIGIDO --- */
+/* ==========================================================================
+   WDD231 - CHAMBER OF COMMERCE: SMALL SCREEN STYLES (Mobile First)
+   ========================================================================== */
+
+:root {
+    --primary-color: #034d18;
+    --card-bg: #f9f9f9;
+    --text-color: #333;
+    --bg-color: #ffffff;
+    --font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- RESET & CONFIGURAÇÕES GERAIS --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- HEADER MOBILE --- */
 header {
     background-color: var(--primary-color);
     color: white;
-    display: grid;
-    grid-template-columns: auto 1fr auto; /* Logo na esquerda, Título no meio, Botão na direita */
+    display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 0.8rem 1rem;
-    position: relative;
+    justify-content: space-between;
+    padding: 0.8rem 1.2rem;
+    width: 100%;
+}
+
+.logo-title-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 header img {
     width: 50px;
     height: auto;
+    background-color: white;
+    border-radius: 4px;
+    padding: 2px;
 }
 
 header span {
-    font-size: 1.2rem; /* Tamanho reduzido para não quebrar em tantas linhas no celular */
-    line-height: 1.2;
+    font-size: 1.1rem;
     font-weight: bold;
+    max-width: 180px;
+    line-height: 1.3;
 }
 
+/* --- BOTÃO HAMBÚRGUER --- */
 .hamburguer {
     background-color: transparent;
     border: none;
     color: white;
-    font-size: 2rem;
+    font-size: 1.8rem;
     cursor: pointer;
     width: 44px;
     height: 44px;
@@ -34,13 +70,21 @@ header span {
     justify-content: center;
 }
 
-/* --- NAVEGAÇÃO MOBILE EM CORTINA --- */
+.hamburguer::before {
+    content: "\2630"; /* Ícone de 3 risquinhos */
+}
+
+.hamburguer.show::before {
+    content: "\00D7"; /* Ícone de fechar (X) */
+}
+
+/* --- NAVEGAÇÃO MOBILE (CORTINA) --- */
 .navigation {
     display: none;
-    grid-column: 1 / -1; /* Força o menu a ocupar a largura inteira abaixo do header */
-    background-color: #ffffff; /* Fundo branco para destacar os links no mobile */
+    background-color: #ffffff;
+    border-bottom: 3px solid var(--primary-color);
     width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navigation.show {
@@ -49,27 +93,20 @@ header span {
 
 .navigation ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-
-.navigation li {
-    width: 100%;
 }
 
 .navigation a {
     display: block;
     padding: 1rem;
-    color: var(--primary-color); /* Texto verde sobre o fundo branco do menu */
+    color: var(--primary-color);
     text-decoration: none;
     border-bottom: solid 1px #eee;
     text-align: center;
     font-weight: bold;
     font-size: 1.1rem;
+    transition: background-color 0.2s ease;
 }
 
-/* Estado ativo e hover no mobile */
 .navigation a.current {
     background-color: var(--primary-color);
     color: #ffffff;
@@ -77,4 +114,162 @@ header span {
 
 .navigation a:hover {
     background-color: #f5f5f5;
+}
+
+/* --- TÍTULO PRINCIPAL --- */
+h1 {
+    text-align: center;
+    margin: 1.5rem 0 0.5rem 0;
+    color: #222;
+}
+
+/* --- BOTÕES DE EXIBIÇÃO --- */
+.view-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 1rem 0;
+}
+
+.view-toggle button {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.view-toggle button.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* --- DIRETÓRIO --- */
+.directory-container {
+    padding: 1rem;
+    min-height: 50vh;
+}
+
+/* Modo Grade (Mobile) */
+.directory-container.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.business-card {
+    background-color: var(--card-bg);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+}
+
+.business-card h2 {
+    background-color: #eee;
+    margin: -1.5rem -1rem 1rem -1rem;
+    padding: 0.6rem;
+    font-size: 1.2rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: #111;
+}
+
+.business-card img {
+    max-width: 140px;
+    width: 100%;
+    height: auto;
+    margin: 1rem auto;
+    display: block;
+    image-rendering: pixelated;
+    object-fit: contain;
+}
+
+.business-card p {
+    margin: 0.4rem 0;
+    font-size: 0.95rem;
+}
+
+.business-card .tagline {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.business-card a {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Modo Lista (Mobile) */
+.directory-container.list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.directory-container.list .business-card {
+    text-align: left;
+    padding: 1rem;
+}
+
+.directory-container.list .business-card h2 {
+    margin: 0 0 0.5rem 0;
+    background: none;
+    padding: 0;
+}
+
+.directory-container.list .business-card img, 
+.directory-container.list .business-card .tagline {
+    display: none; /* Oculta no modo lista compacta */
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #eee;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    border-top: 1px solid #ddd;
+}
+
+.footer-info p {
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border: var(--primary-color) solid 1.5px;
+    border-radius: 6px;
+}
+
+.social img {
+    width: 24px;
+    height: 24px;
+}
+
+.social a:hover {
+    background-color: white;
 }
