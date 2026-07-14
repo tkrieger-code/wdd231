@@ -1,76 +1,134 @@
+/* ==========================================================================
+   WDD231 - CHAMBER OF COMMERCE: LARGER SCREEN STYLES (Consolidado)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   ESTÁGIO 1: A partir de 38rem (608px) - Modo Tablet / Telas Médias
+   Protege contra colisões: empilha o menu abaixo do título e ajusta o grid.
+   -------------------------------------------------------------------------- */
 @media (min-width: 38rem) {
+    /* Header empilhado em duas linhas para evitar colisões horizontais */
     header {
-        display: flex; /* Volta a ser flexbox no desktop */
-        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        padding: 1rem 2rem;
+        gap: 15px;
+        padding: 1.2rem 2rem;
     }
 
-    header span {
-        font-size: 1.6rem; /* Título maior no desktop */
+    .logo-title-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        justify-content: center;
     }
 
-    header img{
-        width: 80px;
+    header img {
+        width: 70px;
         height: auto;
         border-radius: 6px;
         padding: 4px;
     }
 
+    header span {
+        font-size: 1.6rem;
+        white-space: nowrap; /* Mantém o título sempre em uma linha só */
+        font-weight: bold;
+    }
+
     .hamburguer {
-        display: none; /* Esconde o botão de menu */
+        display: none;
     }
 
     .navigation {
-        display: block;
-        grid-column: auto; /* Reseta a cortina do mobile */
-        background-color: transparent; /* Remove o fundo branco do mobile */
+        display: block !important;
+        background-color: transparent;
         box-shadow: none;
-        width: auto;
+        width: 100%;
     }
 
     .navigation ul {
         display: flex;
-        justify-content: flex-end;
-        gap: 10px;
+        justify-content: center;
+        gap: 12px;
     }
 
     .navigation a {
-        color: white; /* Volta a ser texto branco sobre o header verde */
+        color: white;
         border-bottom: none;
         padding: 0.5rem 1rem;
         border-radius: 4px;
+        font-weight: bold;
     }
 
     .navigation a.current {
-        background-color: rgba(0, 0, 0, 0.4); /* Fundo contrastante para a aba ativa */
+        background-color: rgba(0, 0, 0, 0.4);
         color: #ffffff;
+    }
+
+    .navigation a:not(.current):hover {
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    /* --- DIRETÓRIO (Envelopado no Media Query para não duplicar no Mobile) --- */
+    .directory-container.grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .directory-container.list {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .directory-container.list .business-card {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 2rem;
+    }
+
+    /* --- FOOTER (Envelopado no Media Query para não conflitar com o Flex do Mobile) --- */
+    footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        gap: 20px;
+        padding: 30px 50px;
+        text-align: left;
     }
 }
 
-.directory-container.grid{
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 1200px;
-    margin: 0 auto;
-}
+/* --------------------------------------------------------------------------
+   ESTÁGIO 2: A partir de 69.7rem (1115px) - Modo Desktop Real
+   Espaço amplo: Logo, título e menu voltam a ficar todos em uma única linha.
+   -------------------------------------------------------------------------- */
+@media (min-width: 69.7rem) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1.2rem 3rem;
+    }
 
-.directory-container.list{
-    max-width: 1000px;
-    margin: 0 auto;
-}
+    .logo-title-container {
+        justify-content: flex-start;
+    }
 
-.directory-container.list .business-card{
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.75rem 2rem;
-}
+    header img {
+        width: 80px; /* Logo maior quando há espaço sobrando */
+    }
 
-footer{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    gap: 20px;
-    padding: 30px 50px;
-    text-align: left;
+    header span {
+        font-size: 1.8rem;
+    }
+
+    .navigation {
+        width: auto;
+    }
+
+    .navigation ul {
+        justify-content: flex-end;
+        gap: 15px;
+    }
 }
