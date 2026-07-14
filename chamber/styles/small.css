@@ -2,10 +2,9 @@
    WDD231 - CHAMBER OF COMMERCE: SMALL SCREEN STYLES (Mobile First)
    ========================================================================== */
 
-/* --- CONFIGURAÇÕES GERAIS --- */
 :root {
     --primary-color: #034d18f4;
-    --card-bg: #f9f9f9; /* Corrigido o vermelho para o cinza suave do wireframe */
+    --card-bg: #f9f9f9;
     --text-color: #333;
     --bg-color: #ffffff;
     --font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -54,7 +53,6 @@ header span {
     content: "\00D7";
 }
 
-/* --- NAVEGAÇÃO MOBILE --- */
 .navigation {
     display: none;
 }
@@ -92,7 +90,6 @@ h1 {
     color: var(--text-color);
 }
 
-/* --- CONTROLES GRID/LIST --- */
 .view-toggle {
     display: flex;
     justify-content: center;
@@ -115,16 +112,14 @@ h1 {
     border-color: var(--primary-color);
 }
 
-/* --- CONTAINER DO DIRETÓRIO --- */
 .directory-container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 1rem;
-    min-height: 50vh; /* Evita saltos de layout (CLS) */
+    min-height: 50vh;
 }
 
-/* Base do cartão corporativo */
 .business-card {
     background-color: var(--card-bg);
     border: 1px solid #ddd;
@@ -152,7 +147,6 @@ h1 {
     object-fit: contain;
 }
 
-/* --- CLASSES ATIVADAS VIA JS (GRID VS LIST) --- */
 .directory-container.grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
@@ -176,7 +170,6 @@ h1 {
     display: none;
 }
 
-/* --- RODAPÉ INSTITUCIONAL MOBILE --- */
 footer {
     display: flex;
     flex-direction: column;

@@ -1,79 +1,78 @@
 /* ==========================================================================
-   WDD231 - CHAMBER OF COMMERCE: LARGER SCREEN STYLES (min-width: 38rem)
+   WDD231 - CHAMBER OF COMMERCE: LARGER SCREEN STYLES
    ========================================================================== */
 
-/* --- HEADER & NAVEGAÇÃO DESKTOP --- */
-.hamburguer {
-    display: none;
-}
+@media (min-width: 38rem) {
+    .hamburguer {
+        display: none;
+    }
 
-.navigation {
-    display: block;
-    max-width: none;
-    flex-grow: 0;
-}
+    .navigation {
+        display: block;
+        max-width: none;
+        flex-grow: 0;
+    }
 
-.navigation ul {
-    display: flex;
-    gap: 10px;
-    margin: 0;
-    padding: 0;
-}
+    .navigation ul {
+        display: flex;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+    }
 
-.navigation a {
-    color: white;
-    border-bottom: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
+    .navigation a {
+        color: white;
+        border-bottom: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
 
-.navigation a.current {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-}
+    /* Alterado o fundo para preto semitransparente para dar contraste excelente com texto branco */
+    .navigation a.current {
+        background-color: rgba(0, 0, 0, 0.4);
+        color: #ffffff;
+    }
 
-/* --- EXIBIÇÃO EM GRID --- */
-.directory-container.grid {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 1200px;
-    margin: 0 auto;
-}
+    .directory-container.grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 
-.directory-container.grid .business-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
+    .directory-container.grid .business-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-/* --- EXIBIÇÃO EM LISTA --- */
-.directory-container.list {
-    max-width: 1000px;
-    margin: 0 auto;
-}
+    .directory-container.list {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
 
-.directory-container.list .business-card {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.75rem 2rem;
-}
+    .directory-container.list .business-card {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 2rem;
+    }
 
-.directory-container.list .business-card:nth-child(even) {
-    background-color: #f0f0f0;
-}
+    .directory-container.list .business-card:nth-child(even) {
+        background-color: #f0f0f0;
+    }
 
-/* --- RODAPÉ DESKTOP --- */
-footer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    gap: 20px;
-    padding: 30px 50px;
-    text-align: left;
-}
+    footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        gap: 20px;
+        padding: 30px 50px;
+        text-align: left;
+    }
 
-footer > div:last-child {
-    text-align: right;
+    footer > div:last-child {
+        text-align: right;
+    }
 }
