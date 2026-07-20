@@ -47,23 +47,31 @@ function displayMembers(members) {
 
 // grid vs list
 // Ações para o botão de Grade (Grid)
-gridBtn.addEventListener("click", () => {
-    container.classList.add("grid");
-    container.classList.remove("list");
-    gridBtn.classList.add("active");
-    listBtn.classList.remove("active");
-});
+// Segurança: código dentro do 'if' só roda se os botões realmente existirem na página atual
+if (gridBtn && listBtn && container) {
+    // Ações para o botão de Grade (Grid)
+    gridBtn.addEventListener("click", () => {
+        container.classList.add("grid");
+        container.classList.remove("list");
+        gridBtn.classList.add("active");
+        listBtn.classList.remove("active");
+    });
 
-// Ações para o botão de Lista (List)
-listBtn.addEventListener("click", () => {
-    container.classList.add("list");
-    container.classList.remove("grid");
-    listBtn.classList.add("active");
-    gridBtn.classList.remove("active");
-});
+    // Ações para o botão de Lista (List)
+    listBtn.addEventListener("click", () => {
+        container.classList.add("list");
+        container.classList.remove("grid");
+        listBtn.classList.add("active");
+        gridBtn.classList.remove("active");
+    });
+}
+
 
 // inicializa a chamada da API ao carregar a pg
-getMembers();
+// Só busca e renderiza os membros se o contêiner do diretório existir na página
+if (container) {
+    getMembers();
+}
 
 // --- Rodapé e Menu Hamburguer ---
 const currentYearSpan = document.getElementById("currentyear");
@@ -72,8 +80,9 @@ if (currentYearSpan) currentYearSpan.textContent = new Date().getFullYear();
 const lastModParagraph = document.getElementById("lastModified");
 if (lastModParagraph) lastModParagraph.textContent = `Last Modification: ${document.lastModified}`;
 
-const hamBtn = document.getElementById("ham-btn");
-const navBar = document.getElementById("nav-bar");
+const hamBtn = document.querySelector(".hamburguer");
+const navBar = document.querySelector(".navigation");
+
 if (hamBtn && navBar) {
     hamBtn.addEventListener("click", () => {
         navBar.classList.toggle("show");

@@ -98,6 +98,40 @@
         padding: 30px 50px;
         text-align: left;
     }
+
+        /* --- LAYOUT DA HOME DESKTOP --- */
+    .home-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Divide a tela em duas colunas */
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 2rem auto;
+    }
+
+    .hero-section {
+        grid-column: 1 / -1; /* Ocupa a largura inteira do topo */
+    }
+
+    .hero-img {
+        height: 400px;
+    }
+
+    .cta-box {
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+        max-width: 350px;
+        margin-top: 0;
+        text-align: left;
+    }
+
+    .spotlight-section {
+        grid-column: 1 / -1; /* Os spotlights ocupam uma linha inteira abaixo */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
 }
 
 /* --------------------------------------------------------------------------
