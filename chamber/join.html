@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canoas Chamber of Commerce - Join Us - Tatiane Krieger</title>
+    <meta name="description" content="Apply for membership at the Canoas Chamber of Commerce and grow your business network in Rio Grande do Sul.">
+    <meta name="author" content="Tatiane Krieger">
+
+    <!-- metadados facebook -->
+    <meta property="og:title" content="Canoas Chamber of Commerce - Join Us">
+    <meta property="og:description" content="Become a member of the Canoas Chamber of Commerce and access networking, training, and publicity opportunities.">
+    <meta property="og:image" content="https://tkrieger-code.github.io/wdd231/chamber/images/og-image.webp">
+    <meta property="og:url" content="https://tkrieger-code.github.io/wdd231/chamber/join .html">
+    <meta property="og:type" content="website">
+
+        <!-- 1. LINKS DO GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css" media="print" onload="this.media='(min-width: 38rem)'">
+    <noscript><link rel="stylesheet" href="styles/larger.css" media="(min-width: 38rem)"></noscript>
+    <script src="scripts/chamber.js" defer></script>
+    <script src="scripts/join.js" defer></script>
+
+    <link rel="icon" href="images/favicon.ico">
+</head>
+
+<body>
+    <header>
+        <div class="logo-title-container">
+            <img src="images/logo-chamber.webp" alt="Logo Canoas Chamber of Commerce">
+            <span>Canoas Chamber of Commerce</span>
+        </div>
+        <button class="hamburguer" aria-label="Menu"></button>
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html" class="current">Join</a></li>
+                <li><a href="#">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="page-title">Membership Application</h1>
+
+        <div class="join-grid">
+            <!-- SEÇÃO DO FORMULÁRIO -->
+            <section class="form-section">
+                <h2>Application Form</h2>
+                <form method="get" action="thankyou.html" class="join-form">
+                    
+                    <label>
+                        <span>First Name*</span>
+                        <input type="text" name="fname" id="fname" required title="Enter your first name" autocomplete="given-name">
+                    </label>
+
+                    <label>
+                        <span>Last Name*</span>
+                        <input type="text" name="lname" id="lname" required title="Enter your last name" autocomplete="family-name">
+                    </label>
+
+                    <label>
+                        <span>Organizational Title</span>
+                        <input type="text" name="title" id="title" title="Enter your job title (minimum 7 characters, alphabetic, hyphens and spaces only)" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}">
+                    </label>
+
+                    <label>
+                        <span>Email Address*</span>
+                        <input type="email" name="email" id="email" required title="Enter a valid email address" autocomplete="email" placeholder="example@domain.com">
+                    </label>
+
+                    <label>
+                        <span>Mobile Phone Number*</span>
+                        <input type="tel" name="phone" id="phone" required title="Enter your mobile phone number" autocomplete="tel">
+                    </label>
+
+                    <label>
+                        <span>Organization / Business Name*</span>
+                        <input type="text" name="organization" id="organization" required title="Enter your company or organization name" autocomplete="organization">
+                    </label>
+
+                    <label>
+                        <span>Membership Level*</span>
+                        <select name="membership" id="membership" required title="Select your membership level">
+                            <option value="" disabled selected>Select a Level...</option>
+                            <option value="np">NP Membership (Non-Profit - Free)</option>
+                            <option value="bronze">Bronze Membership</option>
+                            <option value="silver">Silver Membership</option>
+                            <option value="gold">Gold Membership</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        <span>Business Description</span>
+                        <textarea name="description" id="description" title="Provide a brief description of your business or organization" rows="4"></textarea>
+                    </label>
+
+                    <!-- CARIMBO DE DATA/HORA OCULTO -->
+                    <input type="hidden" name="timestamp" id="timestamp" value="">
+
+                    <input type="submit" value="Complete Application" class="submit-btn">
+                </form>
+            </section>
+
+            <!-- SEÇÃO DOS CARTÕES DE ASSOCIAÇÃO (CARDS + MODAIS) -->
+            <section class="cards-section">
+                <h2>Membership Levels & Benefits</h2>
+                <div class="cards-grid">
+                    
+                    <div class="membership-card card-np">
+                        <h3>NP Membership</h3>
+                        <p>For non-profit organizations seeking community engagement.</p>
+                        <button type="button" class="open-modal" data-modal="modal-np">Learn More</button>
+                    </div>
+
+                    <div class="membership-card card-bronze">
+                        <h3>Bronze Membership</h3>
+                        <p>Essential benefits for small businesses and startups.</p>
+                        <button type="button" class="open-modal" data-modal="modal-bronze">Learn More</button>
+                    </div>
+
+                    <div class="membership-card card-silver">
+                        <h3>Silver Membership</h3>
+                        <p>Enhanced exposure and networking opportunities.</p>
+                        <button type="button" class="open-modal" data-modal="modal-silver">Learn More</button>
+                    </div>
+
+                    <div class="membership-card card-gold">
+                        <h3>Gold Membership</h3>
+                        <p>Maximum visibility, spotlight features, and premium benefits.</p>
+                        <button type="button" class="open-modal" data-modal="modal-gold">Learn More</button>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- DIÁLOGOS MODAIS PARA OS BENEFÍCIOS -->
+        <dialog id="modal-np" class="membership-modal">
+            <div class="modal-content">
+                <h3>NP Membership Benefits</h3>
+                <ul>
+                    <li>Free membership for registered Non-Profits.</li>
+                    <li>Directory listing on the Chamber website.</li>
+                    <li>Access to general networking events.</li>
+                </ul>
+                <button type="button" class="close-modal">Close</button>
+            </div>
+        </dialog>
+
+        <dialog id="modal-bronze" class="membership-modal">
+            <div class="modal-content">
+                <h3>Bronze Membership Benefits</h3>
+                <ul>
+                    <li>Includes all NP benefits.</li>
+                    <li>Discounted admission to Chamber workshops and seminars.</li>
+                    <li>Member news published in monthly newsletters.</li>
+                </ul>
+                <button type="button" class="close-modal">Close</button>
+            </div>
+        </dialog>
+
+        <dialog id="modal-silver" class="membership-modal">
+            <div class="modal-content">
+                <h3>Silver Membership Benefits</h3>
+                <ul>
+                    <li>Includes all Bronze benefits.</li>
+                    <li>Homepage Spotlight rotation eligibility.</li>
+                    <li>Free access to bi-monthly networking breakfasts.</li>
+                    <li>15% discount on event sponsorships.</li>
+                </ul>
+                <button type="button" class="close-modal">Close</button>
+            </div>
+        </dialog>
+
+        <dialog id="modal-gold" class="membership-modal">
+            <div class="modal-content">
+                <h3>Gold Membership Benefits</h3>
+                <ul>
+                    <li>Includes all Silver benefits.</li>
+                    <li>Priority Homepage Spotlight placement.</li>
+                    <li>VIP seating and recognition at annual Chamber galas.</li>
+                    <li>Free booth space at Chamber trade expos.</li>
+                    <li>Dedicated email blast to all Chamber members once per year.</li>
+                </ul>
+                <button type="button" class="close-modal">Close</button>
+            </div>
+        </dialog>
+
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <p><strong>Canoas Chamber of Commerce</strong></p>
+            <p>Av. Farroupilha 6303, Igara</p>
+            <p>Canoas, RS, 92410305</p>
+            <p>info@canoaschamber.org</p>
+            <p>(51) 996169709</p>
+        </div>
+
+        <div class="social">
+            <a href="https://www.facebook.com/andry.taty/?locale=pt_BR" target="_blank" aria-label="Facebook"><img src="images/facebook.svg" alt="facebook" width="16" height="16"></a>
+            <a href="https://github.com/tkrieger-code" target="_blank" aria-label="Github"><img src="images/github.svg" alt="github" width="16" height="16"></a>
+            <a href="https://www.instagram.com/andrytaty/" target="_blank" aria-label="Instagram"><img src="images/instagram.svg" alt="instagram" width="16" height="16"></a>
+            <a href="https://www.linkedin.com/in/tatiane-krieger-b75934373/" target="_blank" aria-label="LinkedIn"><img src="images/linkedin.svg" alt="linkedin" width="16" height="16"></a>
+        </div>
+
+        <div class="footer-meta">
+            <p>WDD231 Class Project</p>
+            <p>Tatiane Krieger</p>
+            <p>&copy; <span id="currentyear"></span> Canoas Chamber of Commerce</p>
+            <p id="lastModified"></p>  
+        </div>
+    </footer>
+    
+</body>
+</html>

@@ -123,6 +123,11 @@ function displayCourses(filteredCourses) {
 
         // Define o conteúdo interno do card (Apenas a sigla e o número, como no wireframe)
         card.innerHTML = `<h3>${course.subject} ${course.number}</h3>`;
+
+        //adiciona o evento de click no card para abrir o modal
+        card.addEventListener("click", () => {
+            displayCourseDetails(course);
+        });
         
         // Adiciona o card ao container na página
         coursesContainer.appendChild(card);
@@ -166,3 +171,23 @@ filterWdd.addEventListener("click", () => {
 
 // Renderização automática ao carregar a página pela primeira vez
 displayCourses(courses);
+
+const courseDetails = document.querySelector("#course-details");
+
+function displayCourseDetails(course) {
+  courseDetails.innerHTML = '';
+  courseDetails.innerHTML = `
+    <button id="closeModal">❌</button>
+    <h2>${course.subject} ${course.number}</h2>
+    <h3>${course.title}</h3>
+    <p><strong>Credits</strong>: ${course.credits}</p>
+    <p><strong>Certificate</strong>: ${course.certificate}</p>
+    <p>${course.description}</p>
+    <p><strong>Technologies</strong>: ${course.technology.join(', ')}</p>
+  `;
+  courseDetails.showModal();
+  
+  closeModal.addEventListener("click", () => {
+    courseDetails.close();
+  });
+}

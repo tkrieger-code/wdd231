@@ -14,7 +14,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    padding: 0px;
 }
 
 body {
@@ -331,4 +331,224 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+/* --- ESTILOS DA PÁGINA JOIN E FORMULÁRIO --- */
+.join-container, .thankyou-container {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.join-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+}
+
+/* Formulário e Rótulos Acessíveis */
+.join-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    background-color: var(--card-bg, #ffffff);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    margin-left: 20px;
+}
+
+.form-section h2{
+    margin-left: 20px;
+}
+
+.join-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    gap: 0.4rem;
+}
+
+.join-form input[type="text"],
+.join-form input[type="email"],
+.join-form input[type="tel"],
+.join-form select,
+.join-form textarea {
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.join-form input:required,
+.join-form select:required {
+    border-left: 4px solid #b71c1c; /* Indicação visual para campos obrigatórios */
+}
+
+.join-form input:valid,
+.join-form select:valid {
+    border-left: 4px solid #2e7d32;
+}
+
+.submit-btn {
+    background-color: var(--primary-color, #034d18);
+    color: white;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #023310;
+}
+
+/* --- CARTÕES DE NÍVEL DE ASSOCIAÇÃO --- */
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.cards-section h2{
+    text-align: center;
+}
+
+.membership-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+    text-align: center;
+    width: 400px;
+    height: 200px;
+    margin-left: 20px;
+    
+    /* ANIMAÇÃO NO CARREGAMENTO INICIAL */
+    animation: cardFadeIn 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Cores específicas por classe */
+.card-np {
+    border-left: 10px solid #2e7d32; /* Verde (Non-Profit) */
+}
+
+.card-bronze {
+    border-left: 10px solid #cd7f32; /* Bronze */
+}
+
+.card-silver {
+    border-left: 10px solid #757575; /* Prata */
+}
+
+.card-gold {
+    border-left: 10px solid #d4af37; /* Ouro */
+}
+
+/* Delays para animação sequencial dos cartões */
+.membership-card:nth-child(1) { animation-delay: 0.2s; }
+.membership-card:nth-child(2) { animation-delay: 0.4s; }
+.membership-card:nth-child(3) { animation-delay: 0.6s; }
+.membership-card:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes cardFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.membership-card button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* --- ESTILIZAÇÃO DAS JANELAS MODAIS (<dialog>) --- */
+.membership-modal {
+    border: none;
+    border-radius: 8px;
+    padding: 0;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 25px #0000004d;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+.membership-modal::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    padding: 1.5rem 1.5rem 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.modal-content ul {
+    margin: 0 0 1.5rem 0;
+    padding-left: 1.2rem;
+}
+
+.modal-content li {
+    margin-bottom: 0.5rem;
+}
+
+.close-modal {
+    background-color: #b71c1c;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    align-self: flex-end;
+    margin-top: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+/* --- ESTILOS DA PÁGINA THANK YOU --- */
+.submitted-info {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    border: 1px solid #ddd;
+}
+
+.info-list {
+    list-style: none;
+    padding: 0;
+}
+
+.info-list li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #eee;
 }
