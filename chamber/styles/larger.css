@@ -7,7 +7,6 @@
    -------------------------------------------------------------------------- */
 @media (min-width: 38rem) {
 
-    /* --- HEADER & NAVEGAÇÃO --- */
     header {
         flex-direction: column;
         gap: 15px;
@@ -25,7 +24,7 @@
 
     header span {
         font-size: 1.6rem;
-        white-space: nowrap; /* Impede quebra de linha no título */
+        white-space: nowrap;
     }
 
     .hamburguer {
@@ -46,7 +45,7 @@
     }
 
     .navigation a {
-        color: white;
+        color: var(--white);
         border-bottom: none;
         padding: 0.5rem 1rem;
         border-radius: 4px;
@@ -123,17 +122,17 @@
         gap: 1.5rem;
     }
 
-    /* --- PÁGINA JOIN (LAYOUT LADO A LADO) --- */
+    /* --- JOIN PAGE --- */
     .join-grid {
         display: grid;
-        grid-template-columns: 2fr 1fr; /* Formulário à esquerda, cartões à direita */
+        grid-template-columns: 2fr 1fr;
         gap: 2.5rem;
         align-items: start;
     }
 
     .join-form,
     .cards-section {
-        max-width: 100%; /* Permite ocupar toda a largura da sua coluna do grid */
+        max-width: 100%;
     }
 }
 
