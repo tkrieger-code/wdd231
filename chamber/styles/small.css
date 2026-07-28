@@ -424,7 +424,6 @@ footer {
 }
 
 /* Bordas laterais por nível */
-.membership-card { border-left-width: 10px; border-left-style: solid; }
 .card-np     { border-left-color: #2e7d32; }
 .card-bronze { border-left-color: #cd7f32; }
 .card-silver { border-left-color: #757575; }
