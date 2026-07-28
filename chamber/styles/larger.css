@@ -1,40 +1,31 @@
 /* ==========================================================================
-   WDD231 - CHAMBER OF COMMERCE: LARGER SCREEN STYLES (Consolidado)
+   WDD231 - CHAMBER OF COMMERCE: LARGER SCREEN STYLES
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   ESTÁGIO 1: A partir de 38rem (608px) - Modo Tablet / Telas Médias
-   Protege contra colisões: empilha o menu abaixo do título e ajusta o grid.
+   ESTÁGIO 1: A partir de 38rem (608px) - Tablet / Telas Médias
    -------------------------------------------------------------------------- */
 @media (min-width: 38rem) {
-    /* Header empilhado em duas linhas para evitar colisões horizontais */
 
+    /* --- HEADER & NAVEGAÇÃO --- */
     header {
-        display: flex;
         flex-direction: column;
-        align-items: center;
         gap: 15px;
         padding: 1.2rem 2rem;
     }
 
     .logo-title-container {
-        display: flex;
-        align-items: center;
-        gap: 15px;
         justify-content: center;
     }
 
     header img {
         width: 70px;
-        height: auto;
-        border-radius: 6px;
         padding: 4px;
     }
 
     header span {
         font-size: 1.6rem;
-        white-space: nowrap; /* Mantém o título sempre em uma linha só */
-        font-weight: bold;
+        white-space: nowrap; /* Impede quebra de linha no título */
     }
 
     .hamburguer {
@@ -59,19 +50,17 @@
         border-bottom: none;
         padding: 0.5rem 1rem;
         border-radius: 4px;
-        font-weight: bold;
     }
 
     .navigation a.current {
         background-color: rgba(0, 0, 0, 0.4);
-        color: #ffffff;
     }
 
     .navigation a:not(.current):hover {
         background-color: rgba(255, 255, 255, 0.15);
     }
 
-    /* --- DIRETÓRIO (Envelopado no Media Query para não duplicar no Mobile) --- */
+    /* --- DIRETÓRIO --- */
     .directory-container.grid {
         grid-template-columns: repeat(3, 1fr);
         max-width: 1200px;
@@ -90,7 +79,7 @@
         padding: 0.75rem 2rem;
     }
 
-    /* --- FOOTER (Envelopado no Media Query para não conflitar com o Flex do Mobile) --- */
+    /* --- FOOTER --- */
     footer {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -100,17 +89,17 @@
         text-align: left;
     }
 
-        /* --- LAYOUT DA HOME DESKTOP --- */
+    /* --- HOME PAGE --- */
     .home-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* Divide a tela em duas colunas */
+        grid-template-columns: 1fr 1fr;
         gap: 2rem;
         max-width: 1200px;
         margin: 2rem auto;
     }
 
     .hero-section {
-        grid-column: 1 / -1; /* Ocupa a largura inteira do topo */
+        grid-column: 1 / -1;
     }
 
     .hero-img {
@@ -128,26 +117,31 @@
     }
 
     .spotlight-section {
-        grid-column: 1 / -1; /* Os spotlights ocupam uma linha inteira abaixo */
+        grid-column: 1 / -1;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 1.5rem;
     }
 
-    /* --- LAYOUT DO JOIN EM DESKTOP (LADO A LADO) --- */
+    /* --- PÁGINA JOIN (LAYOUT LADO A LADO) --- */
     .join-grid {
         display: grid;
         grid-template-columns: 2fr 1fr; /* Formulário à esquerda, cartões à direita */
         gap: 2.5rem;
         align-items: start;
     }
+
+    .join-form,
+    .cards-section {
+        max-width: 100%; /* Permite ocupar toda a largura da sua coluna do grid */
+    }
 }
 
 /* --------------------------------------------------------------------------
-   ESTÁGIO 2: A partir de 69.7rem (1115px) - Modo Desktop Real
-   Espaço amplo: Logo, título e menu voltam a ficar todos em uma única linha.
+   ESTÁGIO 2: A partir de 69.7rem (1115px) - Desktop
    -------------------------------------------------------------------------- */
 @media (min-width: 69.7rem) {
+
     header {
         flex-direction: row;
         justify-content: space-between;
@@ -159,7 +153,7 @@
     }
 
     header img {
-        width: 80px; /* Logo maior quando há espaço sobrando */
+        width: 80px;
     }
 
     header span {
