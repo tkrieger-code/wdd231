@@ -424,10 +424,10 @@ footer {
 }
 
 /* Bordas laterais por nível */
-.card-np     { border-left-color: #2e7d32; }
-.card-bronze { border-left-color: #cd7f32; }
-.card-silver { border-left-color: #757575; }
-.card-gold   { border-left-color: #d4af37; }
+.card-np     { border-left: 10px solid #2e7d32; }
+.card-bronze { border-left: 10px solid #cd7f32; }
+.card-silver { border-left: 10px solid #757575; }
+.card-gold   { border-left: 10px solid #d4af37; }
 
 /* Delays para animação em cascata */
 .membership-card:nth-child(1) { animation-delay: 0.2s; }
