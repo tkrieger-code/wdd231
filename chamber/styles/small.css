@@ -4,17 +4,18 @@
 
 :root {
     --primary-color: #034d18;
+    --primary-hover: #023310;
     --card-bg: #f9f9f9;
     --text-color: #333;
     --bg-color: #ffffff;
     --font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* --- RESET & CONFIGURAÇÕES GERAIS --- */
+/* --- RESET & ESTRUTURA GERAL --- */
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0px;
+    padding: 0;
 }
 
 body {
@@ -24,7 +25,7 @@ body {
     line-height: 1.6;
 }
 
-/* --- HEADER MOBILE --- */
+/* --- HEADER & NAVEGAÇÃO --- */
 header {
     background-color: var(--primary-color);
     color: white;
@@ -55,9 +56,8 @@ header span {
     padding-left: 10px;
 }
 
-/* --- BOTÃO HAMBÚRGUER --- */
 .hamburguer {
-    background-color: transparent;
+    background: transparent;
     border: none;
     color: white;
     font-size: 1.8rem;
@@ -69,15 +69,9 @@ header span {
     justify-content: center;
 }
 
-.hamburguer::before {
-    content: "\2630"; /* Ícone de 3 risquinhos */
-}
+.hamburguer::before { content: "\2630"; }
+.hamburguer.show::before { content: "\00D7"; }
 
-.hamburguer.show::before {
-    content: "\00D7"; /* Ícone de fechar (X) */
-}
-
-/* --- NAVEGAÇÃO MOBILE (CORTINA) --- */
 .navigation {
     display: none;
     background-color: #ffffff;
@@ -85,20 +79,15 @@ header span {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.navigation.show {
-    display: block;
-}
-
-.navigation ul {
-    list-style-type: none;
-}
+.navigation.show { display: block; }
+.navigation ul { list-style: none; }
 
 .navigation a {
     display: block;
     padding: 1rem;
     color: var(--primary-color);
     text-decoration: none;
-    border-bottom: solid 1px #eee;
+    border-bottom: 1px solid #eee;
     text-align: center;
     font-weight: bold;
     font-size: 1.1rem;
@@ -114,14 +103,13 @@ header span {
     background-color: #f5f5f5;
 }
 
-/* --- TÍTULO PRINCIPAL --- */
+/* --- TÍTULOS E BOTÕES DE MODO DE EXIBIÇÃO --- */
 h1 {
     text-align: center;
-    margin: 1.5rem 0 0.5rem 0;
+    margin: 1.5rem 0 0.5rem;
     color: #222;
 }
 
-/* --- BOTÕES DE EXIBIÇÃO --- */
 .view-toggle {
     display: flex;
     justify-content: center;
@@ -146,13 +134,12 @@ h1 {
     border-color: var(--primary-color);
 }
 
-/* --- DIRETÓRIO --- */
+/* --- DIRETÓRIO DE EMPRESAS --- */
 .directory-container {
     padding: 1rem;
     min-height: 50vh;
 }
 
-/* Modo Grade (Mobile) */
 .directory-container.grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -170,11 +157,10 @@ h1 {
 
 .business-card h2 {
     background-color: #eee;
-    margin: -1.5rem -1rem 1rem -1rem;
+    margin: -1.5rem -1rem 1rem;
     padding: 0.6rem;
     font-size: 1.2rem;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-radius: 8px 8px 0 0;
     color: #111;
 }
 
@@ -184,7 +170,6 @@ h1 {
     height: auto;
     margin: 1rem auto;
     display: block;
-    image-rendering: pixelated;
     object-fit: contain;
 }
 
@@ -205,7 +190,7 @@ h1 {
     text-decoration: underline;
 }
 
-/* Modo Lista (Mobile) */
+/* Modo Lista */
 .directory-container.list {
     display: flex;
     flex-direction: column;
@@ -218,14 +203,14 @@ h1 {
 }
 
 .directory-container.list .business-card h2 {
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.5rem;
     background: none;
     padding: 0;
 }
 
 .directory-container.list .business-card img, 
 .directory-container.list .business-card .tagline {
-    display: none; /* Oculta no modo lista compacta */
+    display: none;
 }
 
 /* --- FOOTER --- */
@@ -259,7 +244,7 @@ footer {
     align-items: center;
     width: 44px;
     height: 44px;
-    border: var(--primary-color) solid 1.5px;
+    border: 1.5px solid var(--primary-color);
     border-radius: 6px;
 }
 
@@ -268,11 +253,9 @@ footer {
     height: 24px;
 }
 
-.social a:hover {
-    background-color: white;
-}
+.social a:hover { background-color: white; }
 
-/* --- LAYOUT DA HOME MOBILE --- */
+/* --- HOME PAGE --- */
 .home-grid {
     padding: 1rem;
     display: flex;
@@ -333,14 +316,17 @@ footer {
     gap: 1rem;
 }
 
-/* --- ESTILOS DA PÁGINA JOIN E FORMULÁRIO --- */
-.join-container, .thankyou-container {
+/* --- PÁGINA JOIN E FORMULÁRIO --- */
+.join-container, 
+.thankyou-container {
     padding: 1rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.page-title {
+.page-title,
+.form-section h2,
+.cards-section h2 {
     text-align: center;
     margin-bottom: 1.5rem;
 }
@@ -353,21 +339,17 @@ footer {
     gap: 2rem;
 }
 
-/* Formulário e Rótulos Acessíveis */
 .join-form {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-    background-color: var(--card-bg, #ffffff);
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--card-bg);
     padding: 1.5rem;
     border-radius: 8px;
     border: 1px solid #ddd;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    margin-left: 20px;
-}
-
-.form-section h2{
-    margin-left: 20px;
 }
 
 .join-form label {
@@ -390,7 +372,7 @@ footer {
 
 .join-form input:required,
 .join-form select:required {
-    border-left: 4px solid #b71c1c; /* Indicação visual para campos obrigatórios */
+    border-left: 4px solid #b71c1c;
 }
 
 .join-form input:valid,
@@ -399,30 +381,30 @@ footer {
 }
 
 .submit-btn {
-    background-color: var(--primary-color, #034d18);
+    background-color: var(--primary-color);
     color: white;
     padding: 0.9rem;
     border: none;
     border-radius: 4px;
-    font-weight: bold;
     font-size: 1.1rem;
+    font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.submit-btn:hover {
-    background-color: #023310;
-}
+.submit-btn:hover { background-color: var(--primary-hover); }
 
 /* --- CARTÕES DE NÍVEL DE ASSOCIAÇÃO --- */
-.cards-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
+.cards-section {
+    width: 100%;
+    max-width: 600px;
 }
 
-.cards-section h2{
-    text-align: center;
+.cards-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
 }
 
 .membership-card {
@@ -432,34 +414,23 @@ footer {
     border: 1px solid #ddd;
     box-shadow: 0 4px 6px rgba(0,0,0,0.08);
     text-align: center;
-    width: 400px;
-    height: 200px;
-    margin-left: 20px;
-    
-    /* ANIMAÇÃO NO CARREGAMENTO INICIAL */
+    width: 100%;
+    box-sizing: border-box;
+
+    /* Animação inicial de entrada */
     animation: cardFadeIn 0.8s ease-out forwards;
     opacity: 0;
     transform: translateY(20px);
 }
 
-/* Cores específicas por classe */
-.card-np {
-    border-left: 10px solid #2e7d32; /* Verde (Non-Profit) */
-}
+/* Bordas laterais por nível */
+.membership-card { border-left-width: 10px; border-left-style: solid; }
+.card-np     { border-left-color: #2e7d32; }
+.card-bronze { border-left-color: #cd7f32; }
+.card-silver { border-left-color: #757575; }
+.card-gold   { border-left-color: #d4af37; }
 
-.card-bronze {
-    border-left: 10px solid #cd7f32; /* Bronze */
-}
-
-.card-silver {
-    border-left: 10px solid #757575; /* Prata */
-}
-
-.card-gold {
-    border-left: 10px solid #d4af37; /* Ouro */
-}
-
-/* Delays para animação sequencial dos cartões */
+/* Delays para animação em cascata */
 .membership-card:nth-child(1) { animation-delay: 0.2s; }
 .membership-card:nth-child(2) { animation-delay: 0.4s; }
 .membership-card:nth-child(3) { animation-delay: 0.6s; }
@@ -482,14 +453,14 @@ footer {
     cursor: pointer;
 }
 
-/* --- ESTILIZAÇÃO DAS JANELAS MODAIS (<dialog>) --- */
+/* --- JANELA MODAL (<dialog>) --- */
 .membership-modal {
     border: none;
     border-radius: 8px;
     padding: 0;
     max-width: 500px;
     width: 90%;
-    box-shadow: 0 10px 25px #0000004d;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     position: fixed;
     top: 50%;
     left: 50%;
@@ -502,24 +473,19 @@ footer {
 }
 
 .modal-content {
-    padding: 1.5rem 1.5rem 2rem 1.5rem;
+    padding: 1.5rem 1.5rem 2rem;
     display: flex;
     flex-direction: column;
 }
 
-.modal-content h3 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-}
+.modal-content h3 { margin-bottom: 1rem; }
 
 .modal-content ul {
-    margin: 0 0 1.5rem 0;
+    margin-bottom: 1.5rem;
     padding-left: 1.2rem;
 }
 
-.modal-content li {
-    margin-bottom: 0.5rem;
-}
+.modal-content li { margin-bottom: 0.5rem; }
 
 .close-modal {
     background-color: #b71c1c;
@@ -527,14 +493,16 @@ footer {
     border: none;
     padding: 0.6rem 1.2rem;
     border-radius: 4px;
-    cursor: pointer;
     font-weight: bold;
+    cursor: pointer;
     align-self: flex-end;
     margin-top: 0.5rem;
     transition: background-color 0.2s ease;
 }
 
-/* --- ESTILOS DA PÁGINA THANK YOU --- */
+.close-modal:hover { background-color: #8c1111; }
+
+/* --- PÁGINA THANK YOU --- */
 .submitted-info {
     background-color: #ffffff;
     padding: 1.5rem;
@@ -543,10 +511,7 @@ footer {
     border: 1px solid #ddd;
 }
 
-.info-list {
-    list-style: none;
-    padding: 0;
-}
+.info-list { list-style: none; }
 
 .info-list li {
     padding: 0.6rem 0;
