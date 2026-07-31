@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canoas Chamber of Commerce - Discover - Tatiane Krieger</title>
+    <meta name="description" content="Discover page of the Canoas Chamber of Commerce, the most iconic places at the city.">
+    <meta name="author" content="Tatiane Krieger">
+
+    <!-- Metadados Facebook / Open Graph -->
+    <meta property="og:title" content="Canoas Chamber of Commerce - Discover">
+    <meta property="og:description" content="Discover the most iconic attractions, parks, and historical places in Canoas, Rio Grande do Sul.">
+    <meta property="og:image" content="https://tkrieger-code.github.io/wdd231/chamber/images/og-image.webp">
+    <meta property="og:url" content="https://tkrieger-code.github.io/wdd231/chamber/discover.html">
+    <meta property="og:type" content="website">
+
+        <!-- 1. LINKS DO GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css" media="print" onload="this.media='(min-width: 38rem)'">
+    <noscript><link rel="stylesheet" href="styles/larger.css" media="(min-width: 38rem)"></noscript>
+    <script type="module" src="scripts/discover.js" defer></script>
+    <script src="scripts/chamber.js" defer></script>
+
+    <link rel="icon" href="images/favicon.ico">
+</head>
+<body>
+        <header>
+        <div class="logo-title-container">
+            <img src="images/logo-chamber.webp" alt="Logo Canoas Chamber of Commerce">
+            <span>Canoas Chamber of Commerce</span>
+        </div>
+        <button class="hamburguer" aria-label="Menu"></button>
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html" class="current">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="discover-main">
+        <h1>Discover Our Attractions</h1>
+
+        <!-- Mensagem de Visita (localStorage) -->
+        <div id="visit-message" class="visit-banner"></div>
+
+        <!-- Container da Galeria onde os cards e áreas nomeadas serão aplicadas -->
+        <section class="discover-grid" id="places-container">
+            <!-- Renderizado via JavaScript -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <p><strong>Canoas Chamber of Commerce</strong></p>
+            <p>Av. Farroupilha 6303, Igara</p>
+            <p>Canoas, RS, 92410305</p>
+            <p>info@canoaschamber.org</p>
+            <p>(51) 996169709</p>
+        </div>
+
+        <div class="social">
+            <a href="https://www.facebook.com/andry.taty/?locale=pt_BR" target="_blank" aria-label="Facebook"><img src="images/facebook.svg" alt="facebook" width="16" height="16"></a>
+            <a href="https://github.com/tkrieger-code" target="_blank" aria-label="Github"><img src="images/github.svg" alt="github" width="16" height="16"></a>
+            <a href="https://www.instagram.com/andrytaty/" target="_blank" aria-label="Instagram"><img src="images/instagram.svg" alt="instagram" width="16" height="16"></a>
+            <a href="https://www.linkedin.com/in/tatiane-krieger-b75934373/" target="_blank" aria-label="LinkedIn"><img src="images/linkedin.svg" alt="linkedin" width="16" height="16"></a>
+        </div>
+
+        <div class="footer-meta">
+            <p>WDD231 Class Project</p>
+            <p>Tatiane Krieger</p>
+            <p>&copy; <span id="currentyear"></span> Canoas Chamber of Commerce</p>
+            <p id="lastModified"></p>  
+        </div>
+    </footer>
+    
+</body>
+</html>
