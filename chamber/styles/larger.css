@@ -3,10 +3,11 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   ESTÁGIO 1: A partir de 38rem (608px) - Tablet / Telas Médias
+   1. ESTILOS GLOBAIS DE TELAS MÉDIAS E GRANDES (a partir de 641px / 40.0625rem)
    -------------------------------------------------------------------------- */
-@media (min-width: 38rem) {
+@media (min-width: 40.0625rem) {
 
+    /* --- HEADER & NAVEGAÇÃO --- */
     header {
         flex-direction: column;
         gap: 15px;
@@ -134,12 +135,40 @@
     .cards-section {
         max-width: 100%;
     }
+
+    /* --- DISCOVER (Base de Animação das Imagens) --- */
+    .discover-card img {
+        transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+    }
 }
 
 /* --------------------------------------------------------------------------
-   ESTÁGIO 2: A partir de 69.7rem (1115px) - Desktop
+   2. REGRAS EXCLUSIVAS PARA TELAS MÉDIAS (641px a 1024px)
    -------------------------------------------------------------------------- */
-@media (min-width: 69.7rem) {
+@media (min-width: 40.0625rem) and (max-width: 64rem) {
+
+    .discover-grid {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "area1 area2"
+            "area3 area3"
+            "area4 area5"
+            "area6 area6"
+            "area7 area8";
+    }
+
+    .discover-card img:hover {
+        transform: scale(1.05);
+        filter: brightness(1.1);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. REGRAS EXCLUSIVAS PARA TELAS GRANDES / DESKTOP (1025px ou mais / 64.0625rem+)
+   -------------------------------------------------------------------------- */
+@media (min-width: 64.0625rem) {
 
     header {
         flex-direction: row;
@@ -167,46 +196,18 @@
         justify-content: flex-end;
         gap: 15px;
     }
-}
 
-/* --- DISCOVER: TELAS MÉDIAS (641px a 1024px) --- */
-@media (min-width: 641px) and (max-width: 1024px) {
+    /* --- DISCOVER GRID DESKTOP --- */
     .discover-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "area1 area2"
-            "area3 area3"
-            "area4 area5"
-            "area6 area5"
-            "area7 area8";
-    }
-
-    /* Efeito de Hover nas Imagens (apenas para telas a partir do tablet) */
-    .discover-card img {
-        transition: transform 0.3s ease, filter 0.3s ease;
-    }
-
-    .discover-card img:hover {
-        transform: scale(1.05);
-        filter: brightness(1.1);
-    }
-}
-
-/* --- DISCOVER: TELAS GRANDES (1025px ou mais) --- */
-@media (min-width: 1025px) {
-    .discover-grid {
+        display: grid;
         max-width: 1200px;
         margin: 0 auto;
+        gap: 1.5rem;
         grid-template-columns: repeat(4, 1fr);
         grid-template-areas:
             "area1 area1 area2 area3"
-            "area4 area5 area5 area3"
-            "area4 area6 area7 area8";
-    }
-
-    /* Efeito de Hover nas Imagens para Desktop */
-    .discover-card img {
-        transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.3s ease;
+            "area4 area5 area5 area5"
+            "area6 area6 area7 area8";
     }
 
     .discover-card img:hover {
