@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(window.location.search);
+  // 👉 Adicione esta linha para ver o que a página está recebendo
+  console.log("URL atual:", window.location.href);
+  console.log("Parâmetros encontrados:", Array.from(params.entries()));
   const responseContainer = document.getElementById('response-details');
   
   if (responseContainer) {
