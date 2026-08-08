@@ -1,0 +1,279 @@
+/* Header & Navegação */
+header {
+  background-color: var(--primary-color);
+  color: #FFF;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-title {
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FFF;
+}
+
+#menu-toggle {
+  background: none;
+  border: none;
+  color: #FFF;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Navegação Mobile (Oculta por padrão) */
+#primary-nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--primary-color);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+/* Classe ativada via JS para abrir o menu mobile */
+#primary-nav.open {
+  display: block;
+}
+
+#primary-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+#primary-nav a {
+  display: block;
+  padding: 15px 20px;
+  color: #FFF;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+#primary-nav a.active, #primary-nav a:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Hero Banner */
+.hero {
+  /* Imagem de fundo com uma camada suave (overlay) para dar contraste ao texto */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/hero-banner1.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  border-radius: 8px;
+  padding: 80px 20px; /* Aumenta a altura vertical do banner */
+  text-align: center;
+  margin-bottom: 30px;
+  color: #FFFFFF; /* Deixa os textos brancos para destacar sobre o fundo */
+}
+
+/* Garante que o título do hero fique legível */
+.hero h1 {
+  color: #FFFFFF;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Sombra leve no texto */
+}
+
+.hero p {
+  color: #FDFBF7;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.btn-primary{
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Section Titles */
+.techniques-section, .products-section, .catalog-header {
+  margin-bottom: 40px;
+}
+
+.section-subtitle {
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+
+/* Cards Grid Layout (Mobile: 1 coluna | Desktop: Múltiplas colunas via media query) */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  min-height: 500px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.card-tag {
+  display: inline-block;
+  background-color: #F3ECE1;
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: fit-content;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  flex: 1;
+}
+
+/* Filtros da página do Catálogo */
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.filter-btn {
+  background-color: var(--bg-color);
+  border: 1px solid var(--secondary-color);
+  color: var(--primary-color);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: var(--body-font);
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background-color: var(--secondary-color);
+  color: #FFF;
+}
+
+/* Modal Dialog Styles */
+dialog {
+  border: none;
+  border-radius: 8px;
+  padding: 0;
+  max-width: 500px;
+  width: 90%;
+  margin: auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  padding: 25px;
+  position: relative;
+  background-color: var(--card-bg);
+}
+
+#close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: #FFF;
+  text-align: center;
+  padding: 25px 15px;
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #E6DEC8;
+}
+
+footer a:hover {
+  color: #FFF;
+}
+
+/* ==========================================================
+   Media Queries para Telas Maiores (Tablet / Desktop - 768px+)
+   ========================================================== */
+@media (min-width: 768px) {
+  #menu-toggle {
+    display: none; /* Esconde o botão hambúrguer no desktop */
+  }
+
+  #primary-nav {
+    display: block;
+    position: static;
+    width: auto;
+    background: none;
+    box-shadow: none;
+  }
+
+  #primary-nav ul {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  #primary-nav a {
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+  }
+
+  /* Exibe os cards em grade de 3 colunas (conforme o wireframe desktop) */
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    min-height: 400px;
+  }
+}

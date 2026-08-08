@@ -1,0 +1,88 @@
+/* Variáveis Globais de Cores e Fontes */
+:root {
+  --primary-color: #4A3525;     /* Dark Terracotta */
+  --secondary-color: #A67C52;   /* Raw Sienna */
+  --accent-color: #C86D51;      /* Clay / Terracotta Accent */
+  --bg-color: #FDFBF7;          /* Cotton Rag Creme */
+  --card-bg: #FFFFFF;
+  --text-color: #2D231A;
+  --border-color: #E6DEC8;
+  
+  --heading-font: 'Playfair Display', Georgia, serif;
+  --body-font: 'Montserrat', sans-serif;
+}
+
+/* Reset Básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding: 20px 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Tipografia Generica */
+h1, h2, h3 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+/* Botões Reutilizáveis */
+.btn-primary, .btn-secondary, .btn-submit {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-family: var(--body-font);
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #FFF;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color);
+  color: #FFF;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: #FFF;
+}

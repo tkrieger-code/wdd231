@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalog — Papel e Ponto Bookbinding Studio</title>
+  <meta name="description" content="Browse our complete collection of handmade sketchbooks, planners, journals, and photo albums with custom paper options.">
+  <meta name="author" content="Tatiane Krieger">
+  
+  <meta property="og:title" content="Papel e Ponto — Handcrafted Catalog">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/hero-banner.webp">
+  <meta property="og:url" content="https://tatianekrieger.github.io/wdd231/finalproject/catalog.html">
+  <meta property="og:description" content="Browse 15+ bespoke handcrafted notebooks with custom binding styles and high-grammage paper.">
+
+  <link rel="icon" href="images/logo-book.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  
+  <script type="module" src="scripts/catalog.js" defer></script>
+  <script type="module" src="scripts/fetch.js" defer></script>
+  <script type="module" src="scripts/modal.js"></script>
+  <script type="module" src="scripts/main.js"></script>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="images/logo-book.webp" alt="Papel e Ponto Studio Logo" class="logo" width="40" height="40">
+      <span class="site-title">Papel e Ponto</span>
+    </div>
+    
+    <button id="menu-toggle" aria-label="Toggle Navigation Menu">
+      <span class="hamburger-icon">☰</span>
+    </button>
+
+    <nav id="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalog.html" class="active">Catalog</a></li>
+        <li><a href="order.html">Order</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="catalog-header">
+      <h1>Handmade Collection</h1>
+      <p>Filter by usage or technique to find the ideal book for your creative work.</p>
+      
+      <!-- Interactive Category Filters -->
+      <div class="filter-controls">
+        <button class="filter-btn active" data-category="all">All Items</button>
+        <button class="filter-btn" data-category="sketchbook">Sketchbooks</button>
+        <button class="filter-btn" data-category="journal">Journals</button>
+        <button class="filter-btn" data-category="planner">Planners</button>
+        <button class="filter-btn" data-category="album">Photo Albums</button>
+      </div>
+
+      <div class="saved-items-counter">
+        <span>Saved Items (Wishlist): <strong id="saved-count">0</strong></span>
+      </div>
+    </section>
+
+    <!-- Main Dynamic Products Grid -->
+    <section class="catalog-grid-container">
+      <div id="full-catalog-grid" class="cards-grid">
+        <!-- 15+ items generated dynamically from JSON -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Reusable Accessible Modal Dialog -->
+  <dialog id="detail-modal">
+    <div class="modal-content">
+      <button id="close-modal" aria-label="Close dialog">&times;</button>
+      <div id="modal-body">
+        <!-- Dynamic product details injected via JS -->
+      </div>
+    </div>
+  </dialog>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2026 Papel e Ponto Studio | Tatiane Krieger | WDD 231 Final Project</p>
+      <p><a href="attributions.html">Attributions & Resources</a> | <a href="site-plan.html">Site Plan</a></p>
+      <p class="video-link">Demonstration Video: <a href="https://youtube.com" target="_blank" rel="noopener">Watch Video Reflection</a></p>
+    </div>
+  </footer>
+</body>
+</html>

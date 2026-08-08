@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Order — Papel e Ponto Bookbinding Studio</title>
+  <meta name="description" content="Request a bespoke bookbinding quote with custom cover cloth, paper weight, and hand-sewn binding options.">
+  <meta name="author" content="Tatiane Krieger">
+  
+  <meta property="og:title" content="Custom Orders — Papel e Ponto Studio">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/hero-banner.webp">
+  <meta property="og:url" content="https://tatianekrieger.github.io/wdd231/finalproject/order.html">
+  <meta property="og:description" content="Design your dream handcrafted notebook with personalized covers, papers, and stitching details.">
+
+  <link rel="icon" href="images/logo-book.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/form.css">
+  
+  <script type="module" src="scripts/main.js"></script>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="images/logo-book.webp" alt="Papel e Ponto Studio Logo" class="logo" width="40" height="40">
+      <span class="site-title">Papel e Ponto</span>
+    </div>
+    
+    <button id="menu-toggle" aria-label="Toggle Navigation Menu">
+      <span class="hamburger-icon">☰</span>
+    </button>
+
+    <nav id="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="order.html" class="active">Order</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-container">
+      <h1>Request a Custom Order</h1>
+      <p>Fill out the specifications below to get a personalized price estimate and production timeline for your bespoke notebook.</p>
+
+      <form action="form-response.html" method="get" class="order-form">
+        
+        <!-- Customer Info -->
+        <fieldset>
+          <legend>Contact Information</legend>
+          
+          <label for="full-name">Full Name *</label>
+          <input type="text" id="full-name" name="fullName" required placeholder="Jane Doe">
+
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required placeholder="jane@example.com">
+
+          <label for="phone">Phone / WhatsApp</label>
+          <input type="tel" id="phone" name="phone" placeholder="(+55) 51 99999-9999">
+        </fieldset>
+
+        <!-- Book Specifications -->
+        <fieldset>
+          <legend>Book Specifications</legend>
+
+          <label for="binding-style">Preferred Binding Technique *</label>
+            <select id="binding-style" name="bindingStyle" required>
+                <option value="" disabled selected>Select a technique...</option>
+                <option value="coptic">Exposed Coptic Stitch (Lies 180° Flat)</option>
+                <option value="hardcover">Classic Hardcover Pamphlet Stitch</option>
+                <option value="moleskine">Moleskine Style (Rounded Corners, Elastic Closure & Ribbon)</option>
+                <option value="leather-wrap">Longstitch Leather / Fabric Wrap</option>
+            </select>
+
+          <label for="paper-type">Paper Weight & Type *</label>
+          <select id="paper-type" name="paperType" required>
+            <option value="" disabled selected>Select paper inner block...</option>
+            <option value="80g-ruled">80 g/m² Cream Book Paper (Ruled / Writing)</option>
+            <option value="120g-plain">120 g/m² Smooth Cotton Paper (Drawing / Ink)</option>
+            <option value="300g-watercolor">300 g/m² Heavyweight Watercolor Paper</option>
+          </select>
+
+          <label for="cover-material">Cover Finishing *</label>
+          <select id="cover-material" name="coverMaterial" required>
+            <option value="" disabled selected>Select cover material...</option>
+            <option value="book-cloth">Hand-dyed Linen Book Cloth</option>
+            <option value="artisan-paper">Handmade Marbled Paper</option>
+            <option value="upcycled-fabric">Upcycled Floral Fabric Wrap</option>
+          </select>
+
+          <label for="page-count">Estimated Page Count</label>
+          <input type="number" id="page-count" name="pageCount" min="40" max="300" step="10" value="120">
+        </fieldset>
+
+        <!-- Details & Notes -->
+        <fieldset>
+          <legend>Special Requests & Personalization</legend>
+          
+          <label for="notes">Description or Custom Stamping Text</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Describe foil stamping text, color preferences, or intended usage..."></textarea>
+        </fieldset>
+
+        <button type="submit" class="btn-submit">Submit Order Request</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2026 Papel e Ponto Studio | Tatiane Krieger | WDD 231 Final Project</p>
+      <p><a href="attributions.html">Attributions & Resources</a> | <a href="site-plan.html">Site Plan</a></p>
+      <p class="video-link">Demonstration Video: <a href="https://youtube.com" target="_blank" rel="noopener">Watch Video Reflection</a></p>
+    </div>
+  </footer>
+</body>
+</html>

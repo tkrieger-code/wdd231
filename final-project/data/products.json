@@ -1,0 +1,162 @@
+[
+  {
+    "id": "prod-01",
+    "name": "Classic Black Moleskine Journal",
+    "technique": "Moleskine Style",
+    "paperWeight": "80 g/m²",
+    "pageCount": 192,
+    "category": "journal",
+    "image": "images/moleskine-black.webp",
+    "description": "Hardcover notebook featuring rounded corners, expandable inner pocket, elastic closure band, and ribbon bookmark."
+  },
+  {
+    "id": "prod-02",
+    "name": "Flora Coptic Watercolor Sketchbook",
+    "technique": "Exposed Coptic Stitch",
+    "paperWeight": "300 g/m²",
+    "pageCount": 80,
+    "category": "sketchbook",
+    "image": "images/coptic-flora.webp",
+    "description": "Hand-stitched open spine notebook allowing full 180-degree flat opening. Ideal for heavy watercolor and wet media."
+  },
+  {
+    "id": "prod-03",
+    "name": "Terracotta Linen Hardcover Journal",
+    "technique": "Classic Hardcover",
+    "paperWeight": "90 g/m²",
+    "pageCount": 160,
+    "category": "journal",
+    "image": "images/hardcover-terracota.webp",
+    "description": "Bound in premium hand-dyed terracotta linen cloth with cream ruled acid-free pages for daily writing."
+  },
+  {
+    "id": "prod-04",
+    "name": "Botanical Memory Photo Album",
+    "technique": "Classic Hardcover",
+    "paperWeight": "250 g/m²",
+    "pageCount": 60,
+    "category": "album",
+    "image": "images/album-botanical.webp",
+    "description": "Heavyweight black mounting card pages protected by glassine interleaving sheets, wrapped in floral fabric."
+  },
+  {
+    "id": "prod-05",
+    "name": "Earthy Olive Moleskine Planner",
+    "technique": "Moleskine Style",
+    "paperWeight": "100 g/m²",
+    "pageCount": 160,
+    "category": "planner",
+    "image": "images/moleskine-olive.webp",
+    "description": "Undated weekly planner with elastic band closure, ribbon bookmark, and durable olive green cover finish."
+  },
+  {
+    "id": "prod-06",
+    "name": "Rustic Leather Longstitch Journal",
+    "technique": "Longstitch Leather Wrap",
+    "paperWeight": "120 g/m²",
+    "pageCount": 120,
+    "category": "journal",
+    "image": "images/leather-longstitch.webp",
+    "description": "Upcycled leather cover bound with exposed longstitch thread sewing and a wrap-around leather tie strap."
+  },
+  {
+    "id": "prod-07",
+    "name": "Marbled Sea Coptic Sketchbook",
+    "technique": "Exposed Coptic Stitch",
+    "paperWeight": "200 g/m²",
+    "pageCount": 100,
+    "category": "sketchbook",
+    "image": "images/coptic-marbled.webp",
+    "description": "Handmade marbled paper covers with color-coordinated exposed thread binding. Opens completely flat for drawing."
+  },
+  {
+    "id": "prod-08",
+    "name": "Minimalist Ochre Pocket Moleskine",
+    "technique": "Moleskine Style",
+    "paperWeight": "80 g/m²",
+    "pageCount": 140,
+    "category": "journal",
+    "image": "images/moleskine-pocket.webp",
+    "description": "Compact A6 size notebook with flexible fabric cover, elastic closure band, and rounded corners for portability."
+  },
+  {
+    "id": "prod-09",
+    "name": "Minimalist Linen Pamphlet Notebook Set",
+    "technique": "Classic Hardcover",
+    "paperWeight": "80 g/m²",
+    "pageCount": 48,
+    "category": "journal",
+    "image": "images/pamphlet-set.webp",
+    "description": "Set of three hand-sewn pamphlet stitch booklet notebooks with lightweight kraft paper covers."
+  },
+  {
+    "id": "prod-10",
+    "name": "Bespoke Wedding Guest Photo Album",
+    "technique": "Classic Hardcover",
+    "paperWeight": "300 g/m²",
+    "pageCount": 80,
+    "category": "album",
+    "image": "images/album-wedding.webp",
+    "description": "Custom album bound in off-white cotton buckram cloth with gold foil cover details and thick archival paper."
+  },
+  {
+    "id": "prod-11",
+    "name": "Artist Indigo Mixed Media Sketchbook",
+    "technique": "Exposed Coptic Stitch",
+    "paperWeight": "250 g/m²",
+    "pageCount": 96,
+    "category": "sketchbook",
+    "image": "images/sketchbook-indigo.webp",
+    "description": "Durable coptic bound sketchbook filled with cold-pressed mixed media paper suitable for gouache, ink, and pencil."
+  },
+  {
+    "id": "prod-12",
+    "name": "Academic Weekly Grid Planner",
+    "technique": "Moleskine Style",
+    "paperWeight": "90 g/m²",
+    "pageCount": 200,
+    "category": "planner",
+    "image": "images/moleskine-grid-planner.webp",
+    "description": "Dot-grid layout interior paired with a sturdy navy hardcover, elastic closure, and dual color-coded ribbon markers."
+  },
+  {
+    "id": "prod-13",
+    "name": "Upcycled Denim Longstitch Journal",
+    "technique": "Longstitch Leather Wrap",
+    "paperWeight": "120 g/m²",
+    "pageCount": 140,
+    "category": "journal",
+    "image": "images/journal-denim.webp",
+    "description": "Hand-stitched notebook using repurposed heavy denim fabric cover and thick unlined recycled paper inside."
+  },
+  {
+    "id": "prod-14",
+    "name": "Vintage Traveler Travelogue Journal",
+    "technique": "Longstitch Leather Wrap",
+    "paperWeight": "100 g/m²",
+    "pageCount": 160,
+    "category": "journal",
+    "image": "images/traveler-journal.webp",
+    "description": "Flexible wrap cover with internal elastic bands holding three removable hand-sewn notebook inserts."
+  },
+  {
+    "id": "prod-15",
+    "name": "Sienna Monthly & Bullet Planner",
+    "technique": "Moleskine Style",
+    "paperWeight": "100 g/m²",
+    "pageCount": 180,
+    "category": "planner",
+    "image": "images/moleskine-bullet.webp",
+    "description": "Designed for bullet journaling with numbered pages, key index, expandable back pocket, and elastic band."
+  },
+  {
+    "id": "prod-16",
+    "name": "Handmade Heritage Family Scrapbook",
+    "technique": "Classic Hardcover",
+    "paperWeight": "280 g/m²",
+    "pageCount": 50,
+    "category": "album",
+    "image": "images/album-heritage.webp",
+    "description": "Large format heirloom album featuring a sturdy sewn spine, reinforced book corners, and heavy kraft leaves."
+  }
+]

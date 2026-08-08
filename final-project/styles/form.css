@@ -1,0 +1,67 @@
+.form-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.order-form {
+  background-color: var(--card-bg);
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  margin-top: 20px;
+}
+
+fieldset {
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+legend {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  color: var(--primary-color);
+  padding: 0 8px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  font-family: var(--body-font);
+  font-size: 1rem;
+  background-color: #FAFAFA;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 4px rgba(166, 124, 82, 0.4);
+}
+
+.btn-submit {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: #FFF;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+.btn-submit:hover {
+  background-color: var(--accent-color);
+}

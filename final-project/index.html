@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Papel e Ponto — Handcrafted Bookbinding & Artisan Stationery</title>
+  <meta name="description" content="Discover handmade sketchbooks, custom journals, and artisanal bookbinding techniques at Papel e Ponto Studio. Crafted with precision and care.">
+  <meta name="author" content="Tatiane Krieger">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Papel e Ponto — Handcrafted Bookbinding Studio">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/hero-banner.webp">
+  <meta property="og:url" content="https://tatianekrieger.github.io/wdd231/finalproject/index.html">
+  <meta property="og:description" content="Artisanal stationery, bespoke notebooks, and traditional bookbinding stitches crafted by hand.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/logo-book.webp" type="image/webp">
+
+  <!-- Google Fonts & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  
+  <!-- JavaScript ES Modules -->
+  <script type="module" src="scripts/main.js" defer></script>
+  <script type="module" src="scripts/fetch.js" defer></script>
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header>
+    <div class="brand">
+      <img src="images/logo-book.webp" alt="Papel e Ponto Studio Logo" class="logo" width="40" height="40">
+      <span class="site-title">Papel e Ponto</span>
+    </div>
+    
+    <button id="menu-toggle" aria-label="Toggle Navigation Menu">
+      <span class="hamburger-icon">☰</span>
+    </button>
+
+    <nav id="primary-nav">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="order.html">Order</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Banner -->
+    <section class="hero">
+      <div class="hero-content">
+        
+        <h1>Crafted by Hand, Bound with Purpose</h1>
+        <p>Explore traditional bookbinding techniques and bespoke stationery designed for writers, artists, and dreamers.</p>
+        <a href="catalog.html" class="btn-primary">Explore Catalog</a>
+      </div>
+    </section>
+
+    <!-- Techniques Section -->
+    <section class="techniques-section">
+      <h2>Bookbinding Techniques</h2>
+      <p class="section-subtitle">Discover the artisanal binding methods behind our creations</p>
+      
+      <div id="techniques-grid" class="cards-grid">
+        <!-- Dynamic technique cards loaded via JavaScript -->
+        <div class="card-skeleton">Loading featured techniques...</div>
+      </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="products-section">
+      <h2>Featured Creations</h2>
+      <p class="section-subtitle">A glimpse of our most loved handcrafted items</p>
+      
+      <div id="featured-products-grid" class="cards-grid">
+        <!-- Dynamic product cards loaded via JavaScript -->
+        <div class="card-skeleton">Loading featured products...</div>
+      </div>
+      
+      <div class="center-cta">
+        <a href="catalog.html" class="btn-secondary">View Full Collection</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Reusable Accessible Modal Dialog -->
+  <dialog id="detail-modal">
+    <div class="modal-content">
+      <button id="close-modal" aria-label="Close dialog">&times;</button>
+      <div id="modal-body">
+        <!-- Dynamic content injected via JS -->
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2026 Papel e Ponto Studio | Tatiane Krieger | WDD 231 Final Project</p>
+      <p><a href="attributions.html">Attributions & Resources</a> | <a href="site-plan.html">Site Plan</a></p>
+      <p class="video-link">Demonstration Video: <a href="https://youtube.com" target="_blank" rel="noopener">Watch Video Reflection</a></p>
+    </div>
+  </footer>
+</body>
+</html>

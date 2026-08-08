@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Papel e Ponto - Order Request Confirmation page displaying submitted custom bookbinding details.">
+  <meta name="author" content="Tatiane Krieger">
+  <title>Order Confirmation | Papel e Ponto</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Style Sheets -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+
+  <script type="module" src="scripts/main.js" defer></script>
+  <script type="module" src="scripts/form-response.js" defer></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="brand">
+      <a href="index.html" class="site-title">Papel e Ponto</a>
+    </div>
+
+    <button id="menu-toggle" aria-label="Toggle Navigation Menu">&#9776;</button>
+
+    <nav id="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="order.html" class="active">Custom Order</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Area -->
+  <main>
+    <section class="form-container" style="margin-top: 30px;">
+      <div style="background-color: var(--card-bg); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center;">
+        
+        <span style="font-size: 3rem; color: var(--secondary-color);">&#10004;</span>
+        <h1 style="margin-bottom: 10px;">Thank You for Your Order Request!</h1>
+        <p style="margin-bottom: 25px; color: var(--secondary-color);">We have received your custom bookbinding details and will review them shortly.</p>
+
+        <!-- Container onde as informações da URL serão inseridas via JavaScript -->
+        <div id="response-details" style="text-align: left; background-color: var(--bg-color); padding: 20px; border-radius: 6px; border: 1px dashed var(--secondary-color); margin-bottom: 25px;">
+          <p>Loading order details...</p>
+        </div>
+
+        <a href="catalog.html" class="btn-primary">Return to Catalog</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="current-year"></span> Papel e Ponto • Handcrafted Bookbinding</p>
+    <p><a href="https://github.com" target="_blank" rel="noopener">GitHub Repository</a></p>
+  </footer>
+</body>
+</html>
